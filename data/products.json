@@ -1,0 +1,302 @@
+{
+  "Products": [
+    {
+      "id": "P001",
+      "name_ar": "عسل سدر كشميري جبلي فاخر",
+      "name_en": "Premium Kashmiri Mountain Sidr Honey",
+      "price": 450,
+      "discount_percent": 20,
+      "stock_status": "In Stock",
+      "image_paths": "assets/images/products/sidr-kashmiri/1.jpg, assets/images/products/sidr-kashmiri/2.jpg, assets/images/products/sidr-kashmiri/3.jpg",
+      "category_ar": "عسل سدر",
+      "category_en": "Sidr Honey",
+      "tags": "سدر, جبلي, فاخر, مناعة",
+      "description_ar": "عسل سدر كشميري نقي 100% مستخلص من زهور شجرة السدر البرية في الجبال العالية. يتميز بلونه الذهبي الداكن وقوامه الكثيف ونكهته العطرية المميزة. مثالي لتقوية جهاز المناعة وصحة الجهاز الهضمي.",
+      "description_en": "100% pure Kashmiri Sidr honey harvested from wild Sidr trees in high altitude mountains. Features a rich amber color, dense texture, and exquisite aromatic flavor. Exceptional for immune support and digestive vitality.",
+      "featured": "Yes"
+    },
+    {
+      "id": "P002",
+      "name_ar": "عسل حبة البركة النقي",
+      "name_en": "Pure Black Seed Honey",
+      "price": 320,
+      "discount_percent": 15,
+      "stock_status": "In Stock",
+      "image_paths": "assets/images/products/black-seed/1.jpg, assets/images/products/black-seed/2.jpg, assets/images/products/black-seed/3.jpg",
+      "category_ar": "عسل أعشاب",
+      "category_en": "Herbal Honey",
+      "tags": "حبة البركة, تنفس, مناعة, طاقة",
+      "description_ar": "عسل نحل طبيعي يتغذى نحله على رحيق زهور الحبة السوداء المباركة. ذو نكهة قوية وفوائد علاجية فائقة للصحة العامة والتنفس ومقاومة الإجهاد.",
+      "description_en": "Natural raw honey gathered from the delicate blossoms of the blessed Nigella Sativa (Black Seed) plant. Renowned for its bold earthy taste and remarkable wellness benefits.",
+      "featured": "Yes"
+    },
+    {
+      "id": "P003",
+      "name_ar": "عسل الزهور الجبلية البرية",
+      "name_en": "Wild Mountain Floral Honey",
+      "price": 280,
+      "discount_percent": 0,
+      "stock_status": "In Stock",
+      "image_paths": "assets/images/products/mountain-wild/1.jpg, assets/images/products/mountain-wild/2.jpg, assets/images/products/mountain-wild/3.jpg",
+      "category_ar": "عسل زهور",
+      "category_en": "Floral Honey",
+      "tags": "زهور, جبلية, طبيعي, مائدة",
+      "description_ar": "عسل بري متميز تم جنيه من رحيق أزهار برية متنوعة في الوديان والمناطق الجبلية النقية. خفيف المذاق وغني بالمعادن والفيتامينات الطبيعية ومثالي للإفطار والمشروبات.",
+      "description_en": "Delicate raw wildflower honey collected from diverse blossoms in untouched mountain valleys. Mild, naturally sweet, and loaded with essential floral enzymes.",
+      "featured": "No"
+    },
+    {
+      "id": "P004",
+      "name_ar": "عسل زهور الموالح المنعش",
+      "name_en": "Fresh Citrus Blossom Honey",
+      "price": 240,
+      "discount_percent": 10,
+      "stock_status": "In Stock",
+      "image_paths": "assets/images/products/citrus-blossom/1.jpg, assets/images/products/citrus-blossom/2.jpg, assets/images/products/citrus-blossom/3.jpg",
+      "category_ar": "عسل زهور",
+      "category_en": "Floral Honey",
+      "tags": "موالح, برتقال, أطفال, فيتامين سي",
+      "description_ar": "مستخلص من بساتين البرتقال والليمون العطرة. يتميز بلونه الذهبي الفاتح ونكهة الحمضيات المنعشة وغناه بفيتامين ج، محبوب جداً للأطفال وتهدئة الأعصاب.",
+      "description_en": "Harvested from fragrant orange and lemon groves. Features a light golden hue, refreshing delicate citrus notes, and natural Vitamin C. A favorite for breakfast and kids.",
+      "featured": "Yes"
+    },
+    {
+      "id": "P005",
+      "name_ar": "عسل برسيم طبيعي بلدي",
+      "name_en": "Pure Natural Clover Honey",
+      "price": 190,
+      "discount_percent": 0,
+      "stock_status": "In Stock",
+      "image_paths": "assets/images/products/clover-honey/1.jpg, assets/images/products/clover-honey/2.jpg, assets/images/products/clover-honey/3.jpg",
+      "category_ar": "عسل زهور",
+      "category_en": "Floral Honey",
+      "tags": "برسيم, بلدي, يومي, اقتصادي",
+      "description_ar": "عسل برسيم نقي من أراضي الدلتا الخصبة، عسل يومي ممتاز خفيف ولطيف على المعدة ومثالي كبديل صحي وطبيعي للسكر الأبيض في التحلية.",
+      "description_en": "Authentic pure Egyptian clover honey from fertile pastoral fields. Sweet, gentle on digestion, and an ideal natural daily alternative to refined sugar.",
+      "featured": "No"
+    },
+    {
+      "id": "P006",
+      "name_ar": "معجون عسل العكبر الطبيعي (البروبوليس)",
+      "name_en": "Raw Propolis Honey Paste",
+      "price": 390,
+      "discount_percent": 25,
+      "stock_status": "In Stock",
+      "image_paths": "assets/images/products/propolis-honey/1.jpg, assets/images/products/propolis-honey/2.jpg, assets/images/products/propolis-honey/3.jpg",
+      "category_ar": "منتجات الخلية",
+      "category_en": "Bee Products",
+      "tags": "عكبر, بروبوليس, مضاد حيوي, حماية",
+      "description_ar": "مزيج علاجي مركز يجمع بين عسل السدر الطبيعي وصمغ العكبر النقي (البروبوليس). يعد أقوى مضاد حيوي طبيعي لتعزيز المناعة ومحاربة الفيروسات والتهابات الحلق.",
+      "description_en": "A therapeutic superfood formulation blending pure raw honey with concentrated natural bee propolis. Acts as a potent natural defense against seasonal threats.",
+      "featured": "Yes"
+    },
+    {
+      "id": "P007",
+      "name_ar": "خلطة الطاقة الملكية (غذاء ملكات + لقاح)",
+      "name_en": "Royal Energy Blend (Royal Jelly & Pollen)",
+      "price": 480,
+      "discount_percent": 0,
+      "stock_status": "In Stock",
+      "image_paths": "assets/images/products/royal-jelly-blend/1.jpg, assets/images/products/royal-jelly-blend/2.jpg, assets/images/products/royal-jelly-blend/3.jpg",
+      "category_ar": "منتجات الخلية",
+      "category_en": "Bee Products",
+      "tags": "غذاء ملكات, حبوب لقاح, نشاط, خصوبة",
+      "description_ar": "إكسير الحيوية والنشاط! خلطة حصرية تتكون من عسل السدر الصافي مع غذاء الملكات الطازج وحبوب لقاح النحل وغبار الطلع. تمد الجسم بنشاط فوري وتزيد التركيز والقدرة البدنية.",
+      "description_en": "An exquisite tonic blend of raw honey, fresh royal jelly, multi-flower bee pollen, and propolis. Provides sustained mental clarity, vitality, and physical stamina.",
+      "featured": "Yes"
+    },
+    {
+      "id": "P008",
+      "name_ar": "بوكس إهداء قطاف الفاخر (3 عبوات مختارة)",
+      "name_en": "Qetaf Luxury Trio Gift Box",
+      "price": 750,
+      "discount_percent": 15,
+      "stock_status": "Out of Stock",
+      "image_paths": "assets/images/products/gift-box-trio/1.jpg, assets/images/products/gift-box-trio/2.jpg, assets/images/products/gift-box-trio/3.jpg",
+      "category_ar": "بكجات وهدايا",
+      "category_en": "Gift Bundles",
+      "tags": "هدية, بوكس, ثلاثي, فخامة",
+      "description_ar": "صندوق خشبي فاخر للإهداء يحتوي على 3 عبوات سعة 500 جرام (عسل سدر كشميري + عسل حبة البركة + عسل زهور برية) مع ملعقة عسل خشبية أصلية. هدية صحية راقية لمن تحب.",
+      "description_en": "An elegant handcrafted gift box containing three 500g premium honey jars (Kashmiri Sidr, Black Seed, and Wildflower) accompanied by a classic wooden honey dipper.",
+      "featured": "No"
+    }
+  ],
+  "HeroOffers": [
+    {
+      "id": "HERO1",
+      "title_ar": "أجود أنواع عسل النحل الطبيعي 100%",
+      "title_en": "100% Pure & Raw Natural Honey",
+      "subtitle_ar": "مستخلص من أفضل المناحل البرية النقية، مفحوص مخبرياً ومضمون بالجودة الذهبية",
+      "subtitle_en": "Harvested from certified pristine apiaries, lab tested with a golden purity guarantee",
+      "badge_ar": "طبيعي 100%",
+      "badge_en": "100% Pure",
+      "button_text_ar": "تصفح المنتجات",
+      "button_text_en": "Shop Products",
+      "link_url": "#products",
+      "image_path": "assets/images/landing/hero/hero1.jpg",
+      "active": "Yes"
+    },
+    {
+      "id": "HERO2",
+      "title_ar": "عروض موسم جني العسل الحصرية",
+      "title_en": "Exclusive Harvest Season Deals",
+      "subtitle_ar": "وفر حتى 25% على باقات عسل السدر الكشميري والخلطات الملكية الخاصة",
+      "subtitle_en": "Save up to 25% on premium Sidr honey and bespoke royal jelly collections",
+      "badge_ar": "خصم خاص",
+      "badge_en": "Special Deal",
+      "button_text_ar": "استكشف العروض",
+      "button_text_en": "Explore Offers",
+      "link_url": "#products",
+      "image_path": "assets/images/landing/hero/hero2.jpg",
+      "active": "Yes"
+    },
+    {
+      "id": "HERO3",
+      "title_ar": "باقة المناعة والوقاية اليومية",
+      "title_en": "Daily Immunity & Wellness Pack",
+      "subtitle_ar": "مزيج العكبر النقي والغذاء الملكي لتعزيز صحتك وصحة أسرتك في كل فصول السنة",
+      "subtitle_en": "The ultimate synergy of royal jelly, propolis, and raw mountain honey",
+      "badge_ar": "الأكثر طلباً",
+      "badge_en": "Best Seller",
+      "button_text_ar": "اطلب باقتك الآن",
+      "button_text_en": "Order Now",
+      "link_url": "#products",
+      "image_path": "assets/images/landing/hero/hero3.jpg",
+      "active": "Yes"
+    }
+  ],
+  "SmallOffers": [
+    {
+      "id": "CARD_ALL",
+      "is_all_products_btn": "Yes",
+      "title_ar": "جميع المنتجات والتشكيلات",
+      "title_en": "All Products & Collections",
+      "subtitle_ar": "تصفح تشكيلة قطاف الكاملة من العسل الطبيعي ومنتجات الخلية الفاخرة",
+      "subtitle_en": "Explore our complete range of raw honeys and hive treasures",
+      "badge_ar": "تسوّق الآن",
+      "badge_en": "Shop Now",
+      "button_text_ar": "عرض كل المنتجات",
+      "button_text_en": "View All Products",
+      "image_path": "assets/images/landing/offers/offer1.jpg",
+      "link_url": "#products",
+      "active": "Yes"
+    },
+    {
+      "id": "OFFER_SIDR",
+      "is_all_products_btn": "No",
+      "title_ar": "عرض عسل السدر الكشميري",
+      "title_en": "Kashmiri Sidr Special",
+      "subtitle_ar": "خصم 20% لفترة محدودة على الكيلو والنصف كيلو",
+      "subtitle_en": "20% discount on 1kg and 500g jars for a limited time",
+      "badge_ar": "خصم 20%",
+      "badge_en": "20% Off",
+      "button_text_ar": "اطلب السدر الآن",
+      "button_text_en": "Get Deal",
+      "image_path": "assets/images/landing/offers/offer1.jpg",
+      "link_url": "#products",
+      "active": "Yes"
+    },
+    {
+      "id": "OFFER_TRIO",
+      "is_all_products_btn": "No",
+      "title_ar": "باقة التوفير الثلاثية",
+      "title_en": "Trio Value Honey Bundle",
+      "subtitle_ar": "ثلاث عبوات مختلفة تلبي احتياجات الأسرة مع شحن مخفض",
+      "subtitle_en": "Three distinct jars suited for the whole family",
+      "badge_ar": "توفير عائلي",
+      "badge_en": "Family Saver",
+      "button_text_ar": "تفاصيل العرض",
+      "button_text_en": "View Bundle",
+      "image_path": "assets/images/landing/offers/offer2.jpg",
+      "link_url": "#products",
+      "active": "Yes"
+    },
+    {
+      "id": "OFFER_HEALTH",
+      "is_all_products_btn": "No",
+      "title_ar": "إطلاق منتجات العكبر والغذاء الملكي",
+      "title_en": "Propolis & Royal Jelly Launch",
+      "subtitle_ar": "منتجات جديدة نقية 100% غنية بالعناصر الحيوية والنشاط",
+      "subtitle_en": "New arrival of 100% pure royal hive extracts",
+      "badge_ar": "وصل حديثاً",
+      "badge_en": "New Arrival",
+      "button_text_ar": "اكتشف المزيد",
+      "button_text_en": "Discover",
+      "image_path": "assets/images/landing/offers/offer3.jpg",
+      "link_url": "#products",
+      "active": "Yes"
+    }
+  ],
+  "Settings": {
+    "announcement_text": {
+      "value_ar": "عروض حصرية لفترة محدودة: شحن مجاني للطلبات بقيمة 500 ج فأكثر! 🍯",
+      "value_en": "Limited Time Offer: Free shipping on orders over 500 EGP! 🍯",
+      "description": "Banner text at top of site. Leave empty if you don't want to display it."
+    },
+    "store_name": {
+      "value_ar": "قطاف العسل | Qetaf Honey",
+      "value_en": "Qetaf Honey",
+      "description": "Store brand name"
+    },
+    "tagline": {
+      "value_ar": "نقاء الطبيعة.. من المناحل إلى مائدتكم مباشرة",
+      "value_en": "Nature's Purest Harvest Straight to Your Table",
+      "description": "Store tagline"
+    },
+    "phone": {
+      "value_ar": "+20 100 123 4567",
+      "value_en": "+20 100 123 4567",
+      "description": "Contact phone number"
+    },
+    "whatsapp": {
+      "value_ar": "201001234567",
+      "value_en": "201001234567",
+      "description": "WhatsApp number without + or spaces for direct chat/ordering"
+    },
+    "email": {
+      "value_ar": "info@qetafhoney.com",
+      "value_en": "info@qetafhoney.com",
+      "description": "Store owner email address for orders and inquiries"
+    },
+    "address": {
+      "value_ar": "جمهورية مصر العربية - متاح التوصيل لكافة المحافظات",
+      "value_en": "Egypt - Delivery available to all governorates",
+      "description": "Physical address or delivery coverage"
+    },
+    "working_hours": {
+      "value_ar": "يومياً من 9 صباحاً حتى 10 مساءً",
+      "value_en": "Daily from 9:00 AM to 10:00 PM",
+      "description": "Working hours"
+    },
+    "facebook_url": {
+      "value_ar": "https://facebook.com/qetafhoney",
+      "value_en": "https://facebook.com/qetafhoney",
+      "description": "Facebook page URL"
+    },
+    "instagram_url": {
+      "value_ar": "https://instagram.com/qetafhoney",
+      "value_en": "https://instagram.com/qetafhoney",
+      "description": "Instagram page URL"
+    },
+    "emailjs_service_id": {
+      "value_ar": "service_qetaf",
+      "value_en": "service_qetaf",
+      "description": "EmailJS Service ID (optional, see instructions)"
+    },
+    "emailjs_template_buyer": {
+      "value_ar": "template_buyer_order",
+      "value_en": "template_buyer_order",
+      "description": "EmailJS Buyer Confirmation Template ID"
+    },
+    "emailjs_template_seller": {
+      "value_ar": "template_seller_order",
+      "value_en": "template_seller_order",
+      "description": "EmailJS Store Owner Notification Template ID"
+    },
+    "emailjs_public_key": {
+      "value_ar": "YOUR_PUBLIC_KEY",
+      "value_en": "YOUR_PUBLIC_KEY",
+      "description": "EmailJS Public Key"
+    }
+  }
+}

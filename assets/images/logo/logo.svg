@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" width="320" height="80">
+  <defs>
+    <linearGradient id="honeyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFDD55"/>
+      <stop offset="50%" stop-color="#FDD768"/>
+      <stop offset="100%" stop-color="#E5A812"/>
+    </linearGradient>
+    <linearGradient id="dropGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFC107"/>
+      <stop offset="100%" stop-color="#D38302"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <!-- Hexagon Emblem with Honey Drop -->
+  <g transform="translate(15, 6)" filter="url(#shadow)">
+    <!-- Hexagon -->
+    <polygon points="34,4 64,21 64,55 34,72 4,55 4,21" fill="url(#honeyGrad)" stroke="#B37D00" stroke-width="2.5" stroke-linejoin="round"/>
+    <!-- Inner subtle border -->
+    <polygon points="34,9 59,23.5 59,52.5 34,67 9,52.5 9,23.5" fill="none" stroke="#FFFFFF" stroke-opacity="0.4" stroke-width="1.5"/>
+    
+    <!-- Honey Drop -->
+    <path d="M34,22 C34,22 46,40 46,49 C46,55.6 40.6,61 34,61 C27.4,61 22,55.6 22,49 C22,40 34,22 34,22 Z" fill="url(#dropGrad)"/>
+    <!-- Highlight on drop -->
+    <ellipse cx="30" cy="46" rx="3.5" ry="6" transform="rotate(-25 30 46)" fill="#FFFFFF" opacity="0.6"/>
+    <!-- Mini honeycomb dots -->
+    <circle cx="17" cy="30" r="2" fill="#996000" opacity="0.4"/>
+    <circle cx="51" cy="30" r="2" fill="#996000" opacity="0.4"/>
+  </g>
+
+  <!-- Brand Typography -->
+  <g transform="translate(92, 22)">
+    <!-- Arabic Brand Name -->
+    <text x="0" y="24" font-family="'Cairo', 'Tajawal', 'Segoe UI', sans-serif" font-weight="900" font-size="28" fill="#222222" letter-spacing="0.5">
+      قطـاف العسـل
+    </text>
+    <!-- Subtitle / English Name -->
+    <text x="2" y="44" font-family="'Outfit', 'Segoe UI', sans-serif" font-weight="700" font-size="12" fill="#8C5803" letter-spacing="3.5">
+      QETAF HONEY
+    </text>
+    <circle cx="185" cy="40" r="2.5" fill="#FDD768"/>
+    <text x="195" y="44" font-family="'Outfit', 'Segoe UI', sans-serif" font-weight="600" font-size="10.5" fill="#666666" letter-spacing="1">
+      NATURAL &amp; PURE
+    </text>
+  </g>
+</svg>

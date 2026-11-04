@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>قطاف العسل | متجر العسل الطبيعي الفاخر 100% - Qetaf Honey</title>
+  <meta name="description" content="قطاف العسل - تسوق أجود أنواع عسل النحل الطبيعي 100%، عسل سدر كشميري، عسل حبة البركة، غذاء ملكات النحل، وعكبر نقي مفحوص مخبرياً مع توصيل لكافة المحافظات.">
+  <meta name="keywords" content="عسل نحل طبيعي, عسل سدر, عكبر, غذاء ملكات, حبوب لقاح, قطاف العسل, عسل كشميري, honey, qetaf honey">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo/logo.svg">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- =========================================================
+       1. Top Announcement Banner (From Excel Settings)
+       Hidden if designated cell in Excel is empty
+  ========================================================= -->
+  <aside id="announcementBanner" class="top-announcement-banner hidden" aria-label="Announcement">
+    <div class="announcement-content">
+      <span id="announcementText"></span>
+    </div>
+    <button id="announcementCloseBtn" class="banner-close-btn" aria-label="Close banner">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+  </aside>
+
+  <!-- =========================================================
+       2. Site Header & Navigation
+       - Logo at TOP MIDDLE as specified
+       - Language switcher at TOP RIGHT
+  ========================================================= -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        
+        <!-- Left: Mobile Nav Toggle & Quick Help -->
+        <div class="header-left">
+          <button id="mobileMenuToggle" class="mobile-menu-toggle" aria-label="Open Navigation Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+        </div>
+
+        <!-- Center: Brand Logo (TOP MIDDLE) -->
+        <div class="header-center">
+          <a href="#landing" class="brand-logo-link" title="قطاف العسل | Qetaf Honey">
+            <img src="assets/images/logo/logo.svg" alt="قطاف العسل - Qetaf Honey" class="brand-logo-img" onerror="this.src='assets/images/logo/logo.png'">
+          </a>
+        </div>
+
+        <!-- Right: Language Switcher & Shopping Cart Button -->
+        <div class="header-right">
+          <!-- Language Switcher Button (Top Right) -->
+          <button id="langToggleBtn" class="lang-switcher-btn" title="Switch Language">
+            <span class="lang-flag">🇬🇧</span>
+            <span>English</span>
+          </button>
+
+          <!-- Shopping Cart Button -->
+          <button id="headerCartBtn" class="header-cart-btn" aria-label="Open Shopping Cart">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+            <span class="cart-btn-label" data-i18n="nav_cart">السلة</span>
+            <span id="cartBadgeCount" class="cart-badge">0</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Main Navigation Bar Links -->
+    <nav class="main-nav-bar" aria-label="Primary Navigation">
+      <div class="container">
+        <ul class="nav-links-list">
+          <li><a href="#landing" class="nav-link active" data-i18n="nav_home">الرئيسية</a></li>
+          <li><a href="#products" class="nav-link" data-i18n="nav_products">المنتجات</a></li>
+          <li><a href="#about" class="nav-link" data-i18n="nav_about">من نحن</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobileNavDrawer" class="mobile-nav-drawer" aria-hidden="true">
+    <div class="mobile-nav-panel">
+      <div class="mobile-nav-header">
+        <a href="#landing" class="brand-logo-link">
+          <img src="assets/images/logo/logo.svg" alt="قطاف العسل" style="height: 44px;" onerror="this.src='assets/images/logo/logo.png'">
+        </a>
+        <button id="mobileNavClose" class="btn-icon-only" aria-label="Close Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="mobile-nav-links">
+        <a href="#landing" class="mobile-nav-link" data-i18n="nav_home">الرئيسية</a>
+        <a href="#products" class="mobile-nav-link" data-i18n="nav_products">المنتجات</a>
+        <a href="#about" class="mobile-nav-link" data-i18n="nav_about">من نحن</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       MAIN CONTENT CONTAINER
+  ========================================================= -->
+  <main id="mainAppContent">
+
+    <!-- =======================================================
+         VIEW 1: LANDING PAGE
+    ======================================================= -->
+    <section id="view-landing" class="view-section active">
+      
+      <!-- Hero Swiping Cards (Large Recent Offers Slider) -->
+      <section class="hero-slider-section">
+        <div class="container">
+          <div id="heroSliderBox" class="slider-container">
+            
+            <div id="heroTrack" class="slider-track">
+              <!-- Dynamically populated from Excel HeroOffers sheet -->
+            </div>
+
+            <!-- Slider Navigation Arrows -->
+            <button id="heroPrevBtn" class="slider-control-btn slider-prev-btn" aria-label="Previous Slide">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m15 18-6-6 6-6"/></svg>
+            </button>
+            <button id="heroNextBtn" class="slider-control-btn slider-next-btn" aria-label="Next Slide">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+
+            <!-- Slider Dots Indicator -->
+            <div id="heroDots" class="slider-dots"></div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Trust Strip (Value Props) -->
+      <section class="trust-strip">
+        <div class="container">
+          <div class="trust-grid">
+            <div class="trust-item">
+              <div class="trust-icon-box">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <div>
+                <h4 class="trust-title" data-i18n="trust_1_title">طبيعي ونقي 100%</h4>
+                <p class="trust-desc" data-i18n="trust_1_desc">بدون أي إضافات أو معالجة حرارية</p>
+              </div>
+            </div>
+
+            <div class="trust-item">
+              <div class="trust-icon-box">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </div>
+              <div>
+                <h4 class="trust-title" data-i18n="trust_2_title">مفحوص ومضمون مخبرياً</h4>
+                <p class="trust-desc" data-i18n="trust_2_desc">شهادات جودة ونقاء معتمدة</p>
+              </div>
+            </div>
+
+            <div class="trust-item">
+              <div class="trust-icon-box">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 18h14M5 14h14M17 9l4 4-4 4M3 9l4 4-4 4"/></svg>
+              </div>
+              <div>
+                <h4 class="trust-title" data-i18n="trust_3_title">توصيل سريع لباب بيتك</h4>
+                <p class="trust-desc" data-i18n="trust_3_desc">تغليف محكم وعناية فائقة</p>
+              </div>
+            </div>
+
+            <div class="trust-item">
+              <div class="trust-icon-box">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
+              </div>
+              <div>
+                <h4 class="trust-title" data-i18n="trust_4_title">الدفع عند الاستلام</h4>
+                <p class="trust-desc" data-i18n="trust_4_desc">عاين العسل وتأكد من جودته أولاً</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Smaller Cards Section
+           Requirement: First small card is a general button that leads to products page;
+           followed by deals and new product launches
+      -->
+      <section class="small-offers-section">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">عروض وخصومات مميزة</h2>
+            <p class="section-subtitle">تشكيلة من أفضل العروض الحصرية وباقات التوفير العائلية</p>
+          </div>
+          <div id="smallOffersGrid" class="small-offers-grid">
+            <!-- Dynamically populated from Excel SmallOffers sheet -->
+          </div>
+        </div>
+      </section>
+
+    </section>
+
+    <!-- =======================================================
+         VIEW 2: PRODUCTS PAGE
+         - Responsive product cards with square image (1:1)
+         - Name, price, discounted price with red line across main price
+         - Stock availability
+         - Category and price filters
+    ======================================================= -->
+    <section id="view-products" class="view-section">
+      <div class="container products-page-section">
+        
+        <div class="section-header">
+          <h2 class="section-title" data-i18n="nav_products">المنتجات</h2>
+          <p class="section-subtitle">استكشف باقتنا المتنوعة من الأعسال الطبيعية النادرة ومنتجات الخلية الملكية</p>
+        </div>
+
+        <!-- Filter & Search Bar -->
+        <div class="products-filter-bar">
+          <div class="filter-top-row">
+            <!-- Search Input -->
+            <div class="search-box">
+              <input type="text" id="productSearchInput" class="search-input" 
+                     placeholder="ابحث عن عسل، سدر، غذاء ملكات..." 
+                     data-i18n-placeholder="search_placeholder">
+              <span class="search-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+              </span>
+            </div>
+
+            <!-- Sort By Select -->
+            <div class="sort-select-wrapper">
+              <select id="productSortSelect" class="sort-select">
+                <option value="default">الترتيب الافتراضي</option>
+                <option value="price_asc">السعر: من الأقل للأعلى</option>
+                <option value="price_desc">السعر: من الأعلى للأقل</option>
+                <option value="discount">أعلى نسبة خصم</option>
+                <option value="name">الاسم أبجدياً</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Category Filter Tags -->
+          <div id="categoryTagsList" class="category-tags-list">
+            <!-- Dynamically populated -->
+          </div>
+
+          <!-- Count Summary -->
+          <div class="filter-summary">
+            <span id="filteredProductsCount">0 منتج متوفر</span>
+          </div>
+        </div>
+
+        <!-- Products Grid -->
+        <div id="productsGrid" class="products-grid">
+          <!-- Dynamically populated from Excel Products sheet -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =======================================================
+         VIEW 3: ABOUT US PAGE
+    ======================================================= -->
+    <section id="view-about" class="view-section">
+      <div class="container about-page-section">
+        
+        <!-- Story Hero -->
+        <div class="about-hero-grid">
+          <div class="about-text-content">
+            <h2 data-i18n="about_hero_title">قصتنا في قطاف العسل</h2>
+            <p data-i18n="about_p1">
+              في «قطاف العسل»، بدأنا رحلتنا من إيمان راسخ بأن العسل الطبيعي ليس مجرد غذاء بل هو شفاء وطاقة حيوية نقية. نختار مواقع مناحلنا بعناية في البيئات الجبلية والوديان والبراري المفتوحة بعيداً عن التلوث والمبيدات.
+            </p>
+            <p data-i18n="about_p2">
+              نلتزم بأعلى معايير فرز وتعبئة العسل دون تسخين أو فلترة مفرطة لنحافظ على كامل الإنزيمات الحية، الفيتامينات، وفوائد حبوب اللقاح الطبيعية، ليصلكم من المنحل إلى مائدتكم بكامل قيمته الغذائية.
+            </p>
+            <div style="margin-top: 1.8rem;">
+              <a href="#products" class="btn btn-primary btn-lg">
+                <span data-i18n="browse_products">تصفح المنتجات الآن</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="about-image-frame">
+            <img src="assets/images/landing/hero/hero1.jpg" alt="عسل قطاف الطبيعي" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Brand Values -->
+        <div class="section-header">
+          <h2 class="section-title">قيمنا والتزامنا تجاهكم</h2>
+          <p class="section-subtitle">المعايير التي نحرص عليها في كل قطرة عسل تصل إلى بيتك</p>
+        </div>
+
+        <div class="about-values-grid">
+          <div class="value-card">
+            <div class="value-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 class="value-title" data-i18n="val_1_title">أمانة ومصداقية</h3>
+            <p class="value-desc" data-i18n="val_1_desc">نضمن نقاء كل قطرة عسل نقدمها، ونلتزم بالفحص الدوري بأدق المختبرات المتخصصة.</p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+            </div>
+            <h3 class="value-title" data-i18n="val_2_title">إنتاج طبيعي مستدام</h3>
+            <p class="value-desc" data-i18n="val_2_desc">نتبع ممارسات تربية نحل رحيمة وصديقة للبيئة تضمن صحة النحل وتنوع المحاصيل.</p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18M3 12h18M6 6l12 12M6 18L18 6"/></svg>
+            </div>
+            <h3 class="value-title" data-i18n="val_3_title">تنوع وجودة استثنائية</h3>
+            <p class="value-desc" data-i18n="val_3_desc">نوفر لكم تشكيلة واسعة من أعسال السدر الجبلي والأعشاب الطبية ومنتجات الخلية الملكية.</p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+            <h3 class="value-title" data-i18n="val_4_title">ثقة ورضا عملائنا</h3>
+            <p class="value-desc" data-i18n="val_4_desc">آلاف العملاء يثقون في قطاف كمصدرهم المعتمد للعسل الطبيعي والمكملات الغذائية.</p>
+          </div>
+        </div>
+
+        <!-- FAQ Accordion -->
+        <div class="faq-section">
+          <div class="section-header">
+            <h2 class="section-title" data-i18n="faq_title">الأسئلة الشائعة</h2>
+          </div>
+
+          <div class="faq-item active">
+            <button class="faq-question">
+              <span data-i18n="faq_1_q">كيف أتأكد من أن عسل قطاف طبيعي 100%؟</span>
+              <svg class="faq-icon-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p data-i18n="faq_1_a">جميع أعسالنا تخضع للفحص المخبري الدوري للتحقق من نسب السكروز والإنزيمات والنقاء التام. كما نقدم ضمان استرجاع كامل في حال ثبت عدم نقاء العسل.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span data-i18n="faq_2_q">هل العسل يتبلور؟ وهل التبلور دليل على الغش؟</span>
+              <svg class="faq-icon-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p data-i18n="faq_2_a">على العكس تماماً! التبلور (التجمد) هو خاصية فيزيائية طبيعية تحدث لبعض أنواع العسل الخام غير المبستر مثل عسل الموالح والبرسيم، وهو أكبر دليل على أن العسل طبيعي وحي ولم يتعرض لحرارة عالية تتلف فوائده.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span data-i18n="faq_3_q">ما هي مدة التوصيل وتكلفة الشحن؟</span>
+              <svg class="faq-icon-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p data-i18n="faq_3_a">يستغرق التوصيل عادة من 24 إلى 48 ساعة داخل القاهرة والجيزة، ومن 2 إلى 4 أيام لباقي المحافظات. الشحن مجاني للطلبات التي تتجاوز 500 جنيه.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================
+       3. Shopping Cart Drawer
+  ========================================================= -->
+  <div id="cartDrawerOverlay" class="cart-drawer-overlay">
+    <aside class="cart-drawer" aria-label="Shopping Cart">
+      <div class="cart-header">
+        <h3 class="cart-header-title">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+          <span data-i18n="cart_title">سلة المشتريات</span>
+        </h3>
+        <button id="cartDrawerClose" class="btn-icon-only" aria-label="Close Cart">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <div id="cartItemsList" class="cart-items-list">
+        <!-- Dynamically rendered -->
+      </div>
+
+      <div class="cart-footer">
+        <div class="cart-subtotal-row">
+          <span data-i18n="subtotal">المجموع الفرعي:</span>
+          <span id="cartSubtotalAmount">0 ج.م</span>
+        </div>
+        <button id="cartDrawerCheckoutBtn" class="btn btn-primary btn-lg" style="width: 100%;">
+          <span data-i18n="checkout">إتمام الطلب</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </aside>
+  </div>
+
+  <!-- =========================================================
+       4. Customer Checkout Modal
+       Requirements:
+       - Name (required)
+       - Phone (required)
+       - Address (Governorate, City, Street, Building, Apt [opt], Landmark [opt])
+       - Notes (optional)
+       - Email (optional)
+  ========================================================= -->
+  <div id="checkoutModal" class="checkout-modal-overlay">
+    <div class="checkout-modal-card">
+      <button id="checkoutModalClose" class="modal-close-btn" aria-label="Close Checkout">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+
+      <div class="section-header" style="text-align: start; margin-bottom: 1.5rem;">
+        <h2 class="section-title" data-i18n="checkout_title">إتمام طلب الشراء</h2>
+        <p class="section-subtitle" style="margin: 0.4rem 0 0;" data-i18n="checkout_subtitle">
+          يرجى تعبئة بيانات التوصيل بدقة لنتمكن من توصيل طلبك بأسرع وقت
+        </p>
+      </div>
+
+      <!-- Checkout Form -->
+      <form id="checkoutForm">
+        <div class="checkout-form-grid">
+          
+          <!-- Name (Required) -->
+          <div class="form-group">
+            <label class="form-label" for="checkoutName">
+              <span data-i18n="field_name">الاسم بالكامل</span>
+              <span class="required-star">*</span>
+            </label>
+            <input type="text" id="checkoutName" class="form-control" placeholder="مثال: محمد أحمد" required>
+          </div>
+
+          <!-- Phone Number (Required) -->
+          <div class="form-group">
+            <label class="form-label" for="checkoutPhone">
+              <span data-i18n="field_phone">رقم الهاتف / واتساب</span>
+              <span class="required-star">*</span>
+            </label>
+            <input type="tel" id="checkoutPhone" class="form-control" placeholder="مثال: 01012345678" required>
+          </div>
+
+          <!-- Email (Optional) -->
+          <div class="form-group col-span-2">
+            <label class="form-label" for="checkoutEmail">
+              <span data-i18n="field_email">البريد الإلكتروني</span>
+              <span class="optional-text" data-i18n="optional">(اختياري)</span>
+            </label>
+            <input type="email" id="checkoutEmail" class="form-control" placeholder="name@example.com">
+          </div>
+
+          <!-- Governorate (Required) -->
+          <div class="form-group">
+            <label class="form-label" for="checkoutGovernorate">
+              <span data-i18n="field_governorate">المحافظة</span>
+              <span class="required-star">*</span>
+            </label>
+            <select id="checkoutGovernorate" class="form-control" required>
+              <option value="" disabled selected>اختر المحافظة...</option>
+            </select>
+          </div>
+
+          <!-- City (Required) -->
+          <div class="form-group">
+            <label class="form-label" for="checkoutCity">
+              <span data-i18n="field_city">المدينة / المركز</span>
+              <span class="required-star">*</span>
+            </label>
+            <input type="text" id="checkoutCity" class="form-control" placeholder="مثال: المعادي / مدينة نصر" required>
+          </div>
+
+          <!-- Street Name (Required) -->
+          <div class="form-group">
+            <label class="form-label" for="checkoutStreet">
+              <span data-i18n="field_street">اسم الشارع</span>
+              <span class="required-star">*</span>
+            </label>
+            <input type="text" id="checkoutStreet" class="form-control" placeholder="مثال: شارع النصر" required>
+          </div>
+
+          <!-- Building No (Required) -->
+          <div class="form-group">
+            <label class="form-label" for="checkoutBuilding">
+              <span data-i18n="field_building">رقم المبنى / العمارة</span>
+              <span class="required-star">*</span>
+            </label>
+            <input type="text" id="checkoutBuilding" class="form-control" placeholder="مثال: عمارة 15" required>
+          </div>
+
+          <!-- Apt No (Optional) -->
+          <div class="form-group">
+            <label class="form-label" for="checkoutApt">
+              <span data-i18n="field_apt">رقم الشقة</span>
+              <span class="optional-text" data-i18n="optional">(اختياري)</span>
+            </label>
+            <input type="text" id="checkoutApt" class="form-control" placeholder="مثال: شقة 4 - الدور الثاني">
+          </div>
+
+          <!-- Nearest Landmark (Optional) -->
+          <div class="form-group">
+            <label class="form-label" for="checkoutLandmark">
+              <span data-i18n="field_landmark">أقرب معلم مميز</span>
+              <span class="optional-text" data-i18n="optional">(اختياري)</span>
+            </label>
+            <input type="text" id="checkoutLandmark" class="form-control" placeholder="مثال: بجوار مسجد النور / أمام صيدلية">
+          </div>
+
+          <!-- Notes (Optional) -->
+          <div class="form-group col-span-2">
+            <label class="form-label" for="checkoutNotes">
+              <span data-i18n="field_notes">ملاحظات إضافية على الطلب</span>
+              <span class="optional-text" data-i18n="optional">(اختياري)</span>
+            </label>
+            <textarea id="checkoutNotes" class="form-control" placeholder="أي تعليمات خاصة بوقت التوصيل أو طريقة الاستلام..."></textarea>
+          </div>
+
+        </div>
+
+        <!-- Order Mini Summary -->
+        <div class="checkout-order-summary">
+          <div class="summary-title" data-i18n="cart_title">ملخص المنتجات:</div>
+          <div id="checkoutSummaryList" class="summary-list"></div>
+          <div class="summary-total-row">
+            <span data-i18n="total">الإجمالي النهائي:</span>
+            <span id="checkoutSummaryTotal">0 ج.م</span>
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div style="margin-top: 1.8rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+          <button type="submit" class="btn btn-primary btn-lg" style="flex: 1;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 13l4 4L19 7"/></svg>
+            <span data-i18n="confirm_order">تأكيد وإرسال الطلب</span>
+          </button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+  <!-- =========================================================
+       5. Product Detail Modal (Flip between all product images)
+       Requirement:
+       "path to all the images of the certain product (I will need to flip between all the iomages on the product page)"
+  ========================================================= -->
+  <div id="productModal" class="modal-overlay">
+    <div class="product-modal-container">
+      <button id="productModalClose" class="modal-close-btn" aria-label="Close Product Details">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+
+      <div class="modal-product-grid">
+        
+        <!-- Multi-Image Gallery -->
+        <div class="modal-gallery-box">
+          <div class="gallery-main-view">
+            <img id="modalMainImg" class="gallery-main-img" src="" alt="Product Preview">
+            
+            <!-- Gallery Arrow Controls to flip between images -->
+            <button id="modalGalleryPrev" class="gallery-nav-arrow gallery-arrow-prev" aria-label="Previous Image">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m15 18-6-6 6-6"/></svg>
+            </button>
+            <button id="modalGalleryNext" class="gallery-nav-arrow gallery-arrow-next" aria-label="Next Image">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+          </div>
+
+          <!-- Thumbnails Row -->
+          <div id="modalThumbsRow" class="gallery-thumbs-row"></div>
+        </div>
+
+        <!-- Product Information -->
+        <div class="modal-info-box">
+          <span id="modalCategory" class="modal-category"></span>
+          <h2 id="modalTitle" class="modal-title"></h2>
+          
+          <div id="modalPricingBox" class="modal-pricing"></div>
+          
+          <div style="margin-bottom: 1.2rem;">
+            <span id="modalStockBadge" class="product-stock-badge in-stock"></span>
+          </div>
+
+          <div class="modal-desc-box">
+            <h4 class="modal-desc-title" data-i18n="view_details">عن المنتج:</h4>
+            <p id="modalDesc" class="modal-desc-text"></p>
+          </div>
+
+          <div id="modalTagsBox" class="modal-tags-box"></div>
+
+          <!-- Actions -->
+          <div class="modal-actions-row">
+            <div class="quantity-stepper">
+              <button id="modalQtyMinus" class="stepper-btn" type="button">-</button>
+              <input type="number" id="modalQtyInput" class="stepper-value" value="1" min="1" readonly>
+              <button id="modalQtyPlus" class="stepper-btn" type="button">+</button>
+            </div>
+
+            <button id="modalAddToCartBtn" class="btn btn-primary btn-lg" style="flex: 1;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+              <span data-i18n="add_to_cart">أضف إلى السلة</span>
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       6. Order Success Modal
+       Requirement:
+       "if he does provide an email we show a success message (Order Complete, we will contact you soon)"
+  ========================================================= -->
+  <div id="orderSuccessModal" class="success-modal-overlay">
+    <div class="success-modal-card">
+      <div class="success-icon-badge">
+        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+      </div>
+
+      <h3 class="success-title" data-i18n="order_success_title">تم استلام طلبك بنجاح! 🎉</h3>
+      <p style="font-weight: 700; color: var(--headline-color); margin-bottom: 0.5rem;">
+        رقم الطلب: <span id="orderSuccessId">#QETAF-1001</span>
+      </p>
+      
+      <p id="orderSuccessMessage" class="success-message">
+        تم اكتمال الطلب، سنتواصل معك قريباً.
+      </p>
+
+      <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+        <!-- Direct WhatsApp Backup button -->
+        <a id="orderSuccessWhatsAppBtn" href="#" target="_blank" class="btn btn-primary btn-lg" style="background: #25D366; color: #FFFFFF; box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm.01 1.67c4.55 0 8.24 3.7 8.24 8.24 0 2.2-.86 4.27-2.42 5.82a8.19 8.19 0 0 1-5.82 2.42c-1.47 0-2.91-.39-4.17-1.14l-.3-.18-3.1.81.83-3.02-.2-.31a8.16 8.16 0 0 1-1.25-4.4c0-4.55 3.7-8.24 8.24-8.24zm4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.4-.13-.56.13-.17.25-.65.81-.8 1-.15.15-.3.17-.55.04-.25-.13-1.06-.39-2.02-1.24-.75-.67-1.25-1.49-1.4-1.74-.15-.25-.02-.39.11-.51.11-.11.25-.3.37-.45.13-.15.17-.25.25-.42.08-.17.04-.32-.02-.45-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.78 2.71 4.3 3.8.6.26 1.07.42 1.44.54.61.19 1.16.17 1.6.1.49-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.17-.48-.29z"/></svg>
+          <span data-i18n="whatsapp_order">متابعة الطلب فوراً عبر واتساب</span>
+        </a>
+
+        <button id="orderSuccessBackBtn" class="btn btn-outline btn-lg">
+          <span data-i18n="back_to_store">العودة للتسوق</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       7. Site Footer
+       - Contact info provided through Excel sheet
+       - Visible across all website pages
+  ========================================================= -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-grid">
+          
+          <!-- Brand Column -->
+          <div class="footer-brand-col">
+            <a href="#landing" class="brand-logo-link" style="justify-content: flex-start;">
+              <img src="assets/images/logo/logo.svg" alt="قطاف العسل" style="height: 54px; filter: brightness(1.2);" onerror="this.src='assets/images/logo/logo.png'">
+            </a>
+            <p data-i18n="tagline">
+              نقاء الطبيعة.. من المناحل إلى مائدتكم مباشرة. أعسال طبيعية مفحوصة ومضمونة الجودة والنقاء 100%.
+            </p>
+            <div class="footer-social-links">
+              <a id="footerFb" href="#" target="_blank" class="social-btn" aria-label="Facebook">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+              </a>
+              <a id="footerIg" href="#" target="_blank" class="social-btn" aria-label="Instagram">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+              </a>
+              <a id="footerWa" href="#" target="_blank" class="social-btn" aria-label="WhatsApp">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm.01 1.67c4.55 0 8.24 3.7 8.24 8.24 0 2.2-.86 4.27-2.42 5.82a8.19 8.19 0 0 1-5.82 2.42c-1.47 0-2.91-.39-4.17-1.14l-.3-.18-3.1.81.83-3.02-.2-.31a8.16 8.16 0 0 1-1.25-4.4c0-4.55 3.7-8.24 8.24-8.24zm4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.4-.13-.56.13-.17.25-.65.81-.8 1-.15.15-.3.17-.55.04-.25-.13-1.06-.39-2.02-1.24-.75-.67-1.25-1.49-1.4-1.74-.15-.25-.02-.39.11-.51.11-.11.25-.3.37-.45.13-.15.17-.25.25-.42.08-.17.04-.32-.02-.45-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.78 2.71 4.3 3.8.6.26 1.07.42 1.44.54.61.19 1.16.17 1.6.1.49-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.17-.48-.29z"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Navigation -->
+          <div>
+            <h4 class="footer-heading" data-i18n="footer_quick_links">روابط سريعة</h4>
+            <ul class="footer-links-list">
+              <li><a href="#landing" class="footer-link" data-i18n="nav_home">الرئيسية</a></li>
+              <li><a href="#products" class="footer-link" data-i18n="nav_products">المنتجات</a></li>
+              <li><a href="#about" class="footer-link" data-i18n="nav_about">من نحن</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact Information (Excel Settings) -->
+          <div>
+            <h4 class="footer-heading" data-i18n="footer_contact_info">معلومات التواصل</h4>
+            <div class="footer-contact-list">
+              <div class="contact-row">
+                <span class="contact-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </span>
+                <span id="footerPhone">+20 100 123 4567</span>
+              </div>
+              <div class="contact-row">
+                <span class="contact-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m4 4 16 16M4 20l16-16"/><rect width="20" height="16" x="2" y="4" rx="2"/></svg>
+                </span>
+                <span id="footerEmail">info@qetafhoney.com</span>
+              </div>
+              <div class="contact-row">
+                <span class="contact-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                </span>
+                <span id="footerAddress">جمهورية مصر العربية</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Guarantee -->
+          <div>
+            <h4 class="footer-heading" data-i18n="footer_guarantee">ضمان قطاف الذهبي</h4>
+            <p style="color: #C8BFAD; line-height: 1.6;" data-i18n="footer_guarantee_text">
+              نضمن لك نقاء منتجاتنا بنسبة 100%.. إن لم ينل العسل رضاك، يمكنك استرجاعه واسترداد قيمته كاملة بدون أي تعقيد.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="footer-bottom">
+      <div class="container">
+        <p data-i18n="copyright">جميع الحقوق محفوظة © قطاف العسل</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================
+       8. Vendor Scripts & Application Bundle
+  ========================================================= -->
+  <!-- SheetJS for live Excel parsing in browser -->
+  <script src="assets/vendor/xlsx.full.min.js"></script>
+
+  <!-- EmailJS SDK for static email notifications -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+  <!-- Data Engine & Main Application -->
+  <script src="assets/js/data-loader.js"></script>
+  <script src="assets/js/app.js"></script>
+
+</body>
+</html>
