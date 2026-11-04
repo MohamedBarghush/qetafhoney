@@ -82,16 +82,6 @@ const i18n = {
     order_success_msg_no_email: "تم اكتمال الطلب، سنتواصل معك قريباً هاتفياً أو عبر واتساب لتأكيد موعد التوصيل.",
     back_to_store: "العودة للتسوق",
     
-    // Trust Strip
-    trust_1_title: "طبيعي ونقي 100%",
-    trust_1_desc: "بدون أي إضافات أو معالجة حرارية",
-    trust_2_title: "مفحوص ومضمون مخبرياً",
-    trust_2_desc: "شهادات جودة ونقاء معتمدة",
-    trust_3_title: "توصيل سريع لباب بيتك",
-    trust_3_desc: "تغليف محكم وعناية فائقة",
-    trust_4_title: "الدفع عند الاستلام",
-    trust_4_desc: "عاين العسل وتأكد من جودته أولاً",
-    
     // About Us Content
     about_hero_title: "قصتنا في قطاف العسل",
     about_hero_subtitle: "رحلة من الشغف بنقاء الطبيعة، نعتني بالنحل لنمنحكم عسلاً كما أراده الخالق.",
@@ -180,16 +170,6 @@ const i18n = {
     order_success_msg_with_email: "Order Complete, we will contact you soon. Receipt details have been sent to your email.",
     order_success_msg_no_email: "Order Complete, we will contact you soon via phone or WhatsApp to schedule delivery.",
     back_to_store: "Back to Shopping",
-    
-    // Trust Strip
-    trust_1_title: "100% Raw & Pure",
-    trust_1_desc: "Unpasteurized with zero additives",
-    trust_2_title: "Lab Tested Guarantee",
-    trust_2_desc: "Certified purity and enzyme rich",
-    trust_3_title: "Fast Doorstep Delivery",
-    trust_3_desc: "Carefully packed & insulated",
-    trust_4_title: "Cash on Delivery",
-    trust_4_desc: "Inspect before paying at your door",
     
     // About Us Content
     about_hero_title: "Our Story at Qetaf Honey",
