@@ -1617,6 +1617,45 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+/* Delivery Coverage Notice (Configured from Excel Settings) */
+.checkout-delivery-notice {
+  background: #FFF9E6;
+  border: 1px solid #FDD768;
+  border-inline-start: 5px solid #B87B00;
+  border-radius: var(--radius-md);
+  padding: 0.95rem 1.25rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  color: var(--headline-color);
+  font-size: 0.96rem;
+  line-height: 1.5;
+  box-shadow: 0 2px 8px rgba(253, 215, 104, 0.2);
+}
+
+.checkout-delivery-notice.hidden {
+  display: none !important;
+}
+
+.delivery-notice-icon {
+  color: #B87B00;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.delivery-notice-text {
+  font-weight: 600;
+}
+
+.delivery-notice-text strong {
+  color: #7A4B00;
+  font-weight: 800;
+  margin-inline-end: 4px;
+}
+
 .checkout-form-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;

@@ -313,7 +313,7 @@
               <svg class="faq-icon-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
             </button>
             <div class="faq-answer">
-              <p data-i18n="faq_3_a">يستغرق التوصيل عادة من 24 إلى 48 ساعة داخل القاهرة والجيزة، ومن 2 إلى 4 أيام لباقي المحافظات. الشحن مجاني للطلبات التي تتجاوز 500 جنيه.</p>
+              <p data-i18n="faq_3_a">يستغرق التوصيل عادة من 24 إلى 48 ساعة داخل مدينة الشروق، مدينتي، بدر والمدن المحيطة. الشحن مجاني للطلبات التي تتجاوز 500 جنيه.</p>
             </div>
           </div>
         </div>
@@ -360,7 +360,7 @@
        Requirements:
        - Name (required)
        - Phone (required)
-       - Address (Governorate, City, Street, Building, Apt [opt], Landmark [opt])
+       - Address (City / Area, Street, Building, Apt [opt], Landmark [opt])
        - Notes (optional)
        - Email (optional)
   ========================================================= -->
@@ -375,6 +375,16 @@
         <p class="section-subtitle" style="margin: 0.4rem 0 0;" data-i18n="checkout_subtitle">
           يرجى تعبئة بيانات التوصيل بدقة لنتمكن من توصيل طلبك بأسرع وقت
         </p>
+      </div>
+
+      <!-- Delivery Coverage Notice (Configured via Excel Settings) -->
+      <div id="checkoutDeliveryNotice" class="checkout-delivery-notice">
+        <div class="delivery-notice-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        </div>
+        <div class="delivery-notice-text">
+          <strong data-i18n="notice_title">تنبيه هام:</strong> <span id="deliveryNoticeContent">التوصيل حاليا متاح فقط في مدينة الشروق و مدينتي و بدر و المدن المحيطة</span>
+        </div>
       </div>
 
       <!-- Checkout Form -->
@@ -408,24 +418,13 @@
             <input type="email" id="checkoutEmail" class="form-control" placeholder="name@example.com">
           </div>
 
-          <!-- Governorate (Required) -->
-          <div class="form-group">
-            <label class="form-label" for="checkoutGovernorate">
-              <span data-i18n="field_governorate">المحافظة</span>
-              <span class="required-star">*</span>
-            </label>
-            <select id="checkoutGovernorate" class="form-control" required>
-              <option value="" disabled selected>اختر المحافظة...</option>
-            </select>
-          </div>
-
-          <!-- City (Required) -->
-          <div class="form-group">
+          <!-- City / Area (Required) -->
+          <div class="form-group col-span-2">
             <label class="form-label" for="checkoutCity">
-              <span data-i18n="field_city">المدينة / المركز</span>
+              <span data-i18n="field_city">المدينة / المنطقة</span>
               <span class="required-star">*</span>
             </label>
-            <input type="text" id="checkoutCity" class="form-control" placeholder="مثال: المعادي / مدينة نصر" required>
+            <input type="text" id="checkoutCity" class="form-control" placeholder="مثال: الشروق / مدينتي / بدر" required>
           </div>
 
           <!-- Street Name (Required) -->

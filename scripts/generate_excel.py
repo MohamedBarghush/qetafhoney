@@ -328,9 +328,15 @@ settings_data = [
         "Store owner email address for orders and inquiries"
     ],
     [
+        "delivery_coverage_notice",
+        "التوصيل حاليا متاح فقط في مدينة الشروق و مدينتي و بدر و المدن المحيطة",
+        "Delivery is currently available only in El Shorouk, Madinaty, Badr, and surrounding areas",
+        "ملاحظة نطاق التوصيل في صفحة إتمام الشراء (Delivery coverage notice in checkout)"
+    ],
+    [
         "address",
-        "جمهورية مصر العربية - متاح التوصيل لكافة المحافظات",
-        "Egypt - Delivery available to all governorates",
+        "مدينة الشروق، مدينتي، بدر والمدن المحيطة",
+        "El Shorouk, Madinaty, Badr & surrounding areas",
         "Physical address or delivery coverage"
     ],
     [

@@ -260,9 +260,13 @@ const DataLoader = (() => {
         value_ar: "info@qetafhoney.com",
         value_en: "info@qetafhoney.com"
       },
+      delivery_coverage_notice: {
+        value_ar: "التوصيل حاليا متاح فقط في مدينة الشروق و مدينتي و بدر و المدن المحيطة",
+        value_en: "Delivery is currently available only in El Shorouk, Madinaty, Badr, and surrounding areas"
+      },
       address: {
-        value_ar: "جمهورية مصر العربية - متاح التوصيل لكافة المحافظات",
-        value_en: "Egypt - Delivery available to all governorates"
+        value_ar: "مدينة الشروق، مدينتي، بدر والمدن المحيطة",
+        value_en: "El Shorouk, Madinaty, Badr & surrounding areas"
       },
       working_hours: {
         value_ar: "يومياً من 9 صباحاً حتى 10 مساءً",

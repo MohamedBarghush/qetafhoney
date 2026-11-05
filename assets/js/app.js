@@ -64,13 +64,13 @@ const i18n = {
     field_name: "الاسم بالكامل",
     field_phone: "رقم الهاتف / واتساب",
     field_email: "البريد الإلكتروني",
-    field_governorate: "المحافظة",
-    field_city: "المدينة / المركز",
+    field_city: "المدينة / المنطقة",
     field_street: "اسم الشارع",
     field_building: "رقم المبنى / العمارة",
     field_apt: "رقم الشقة",
     field_landmark: "أقرب معلم مميز",
     field_notes: "ملاحظات إضافية على الطلب",
+    notice_title: "تنبيه هام:",
     optional: "(اختياري)",
     required: "*",
     confirm_order: "تأكيد وإرسال الطلب",
@@ -103,7 +103,7 @@ const i18n = {
     faq_2_q: "هل العسل يتبلور؟ وهل التبلور دليل على الغش؟",
     faq_2_a: "على العكس تماماً! التبلور (التجمد) هو خاصية فيزيائية طبيعية تحدث لبعض أنواع العسل الخام غير المبستر مثل عسل الموالح والبرسيم، وهو أكبر دليل على أن العسل طبيعي وحي ولم يتعرض لحرارة عالية تتلف فوائده.",
     faq_3_q: "ما هي مدة التوصيل وتكلفة الشحن؟",
-    faq_3_a: "يستغرق التوصيل عادة من 24 إلى 48 ساعة داخل القاهرة والجيزة، ومن 2 إلى 4 أيام لباقي المحافظات. الشحن مجاني للطلبات التي تتجاوز 500 جنيه.",
+    faq_3_a: "يستغرق التوصيل عادة من 24 إلى 48 ساعة داخل مدينة الشروق ومدينتي وبدر والمدن المحيطة. الشحن مجاني للطلبات التي تتجاوز 500 جنيه.",
     
     footer_quick_links: "روابط سريعة",
     footer_contact_info: "معلومات التواصل",
@@ -153,13 +153,13 @@ const i18n = {
     field_name: "Full Name",
     field_phone: "Phone / WhatsApp",
     field_email: "Email Address",
-    field_governorate: "Governorate",
-    field_city: "City / District",
+    field_city: "City / Area",
     field_street: "Street Name",
     field_building: "Building Number",
     field_apt: "Apartment No.",
     field_landmark: "Nearest Landmark",
     field_notes: "Order Notes",
+    notice_title: "Important Notice:",
     optional: "(Optional)",
     required: "*",
     confirm_order: "Confirm & Place Order",
@@ -192,7 +192,7 @@ const i18n = {
     faq_2_q: "Does raw honey crystallize? Is crystallization bad?",
     faq_2_a: "Not at all! Crystallization is a natural physical hallmark of unpasteurized, enzyme-rich raw honey. It confirms that the honey was never overheated or artificially processed.",
     faq_3_q: "What are your delivery times and shipping costs?",
-    faq_3_a: "Orders in Cairo/Giza arrive within 24-48 hours; all other governorates within 2-4 days. Free delivery applies on orders above 500 EGP.",
+    faq_3_a: "Orders in El Shorouk, Madinaty, Badr, and surrounding areas arrive within 24-48 hours. Free delivery applies on orders above 500 EGP.",
     
     footer_quick_links: "Quick Links",
     footer_contact_info: "Contact Info",
@@ -200,22 +200,6 @@ const i18n = {
     footer_guarantee_text: "100% satisfaction guaranteed. If you are not delighted with your honey, return it for a complete hassle-free refund.",
     copyright: "All Rights Reserved © Qetaf Honey"
   }
-};
-
-// Egyptian Governorates list for seamless checkout selection
-const GOVERNORATES = {
-  ar: [
-    "القاهرة", "الجيزة", "الإسكندرية", "القليوبية", "الدقهلية", "الشرقية", 
-    "الغربية", "المنوفية", "البحيرة", "كفر الشيخ", "دمياط", "بورسعيد", 
-    "الإسماعيلية", "السويس", "الفيوم", "بني سويف", "المنيا", "أسيوط", 
-    "سوهاج", "قنا", "الأقصر", "أسوان", "البحر الأحمر", "جنوب سيناء", "شمال سيناء", "مطروح", "الوادي الجديد"
-  ],
-  en: [
-    "Cairo", "Giza", "Alexandria", "Qalyubia", "Dakahlia", "Sharqia",
-    "Gharbia", "Monufia", "Beheira", "Kafr El Sheikh", "Damietta", "Port Said",
-    "Ismailia", "Suez", "Fayoum", "Beni Suef", "Minya", "Asyut",
-    "Sohag", "Qena", "Luxor", "Aswan", "Red Sea", "South Sinai", "North Sinai", "Matrouh", "New Valley"
-  ]
 };
 
 /**
@@ -298,7 +282,7 @@ function renderAll() {
   renderCart();
   renderCheckoutSummary();
   renderFooter();
-  populateGovernorates();
+  renderDeliveryCoverageNotice();
   prefillCustomerForm();
 }
 
@@ -904,20 +888,26 @@ function renderCheckoutSummary() {
   }).join('');
 }
 
-function populateGovernorates() {
-  const select = document.getElementById('checkoutGovernorate');
-  if (!select) return;
+/**
+ * Delivery Coverage Notice (From Excel Settings)
+ * "التوصيل حاليا متاح فقط في مدينة الشروق و مدينتي و بدر و المدن المحيطة"
+ */
+function renderDeliveryCoverageNotice() {
+  const noticeContainer = document.getElementById('checkoutDeliveryNotice');
+  const noticeTextEl = document.getElementById('deliveryNoticeContent');
+  if (!noticeContainer || !noticeTextEl || !state.storeData) return;
 
-  const currentVal = select.value;
-  const list = GOVERNORATES[state.lang] || GOVERNORATES.ar;
+  const settings = state.storeData.Settings || {};
+  const noticeSetting = settings.delivery_coverage_notice || {};
+  const text = state.lang === 'ar' 
+    ? (noticeSetting.value_ar || "التوصيل حاليا متاح فقط في مدينة الشروق و مدينتي و بدر و المدن المحيطة") 
+    : (noticeSetting.value_en || noticeSetting.value_ar || "Delivery is currently available only in El Shorouk, Madinaty, Badr, and surrounding areas");
 
-  select.innerHTML = `
-    <option value="" disabled selected>${state.lang === 'ar' ? 'اختر المحافظة...' : 'Select Governorate...'}</option>
-    ${list.map(gov => `<option value="${gov}">${gov}</option>`).join('')}
-  `;
-
-  if (currentVal) {
-    select.value = currentVal;
+  if (text && text.trim().length > 0) {
+    noticeTextEl.textContent = text.trim();
+    noticeContainer.classList.remove('hidden');
+  } else {
+    noticeContainer.classList.add('hidden');
   }
 }
 
@@ -935,7 +925,6 @@ function prefillCustomerForm() {
   setField('checkoutName', c.name);
   setField('checkoutPhone', c.phone);
   setField('checkoutEmail', c.email);
-  setField('checkoutGovernorate', c.governorate);
   setField('checkoutCity', c.city);
   setField('checkoutStreet', c.street);
   setField('checkoutBuilding', c.building);
@@ -982,7 +971,6 @@ async function handleCheckoutSubmit(e) {
   const name = document.getElementById('checkoutName').value.trim();
   const phone = document.getElementById('checkoutPhone').value.trim();
   const email = document.getElementById('checkoutEmail').value.trim();
-  const governorate = document.getElementById('checkoutGovernorate').value.trim();
   const city = document.getElementById('checkoutCity').value.trim();
   const street = document.getElementById('checkoutStreet').value.trim();
   const building = document.getElementById('checkoutBuilding').value.trim();
@@ -991,14 +979,14 @@ async function handleCheckoutSubmit(e) {
   const notes = document.getElementById('checkoutNotes').value.trim();
 
   // Basic validation for required fields
-  if (!name || !phone || !governorate || !city || !street || !building) {
-    alert(state.lang === 'ar' ? 'يرجى ملء جميع الحقول المطلوبة (الاسم، الهاتف، المحافظة، المدينة، الشارع، المبنى)' : 'Please fill all required fields');
+  if (!name || !phone || !city || !street || !building) {
+    alert(state.lang === 'ar' ? 'يرجى ملء جميع الحقول المطلوبة (الاسم، الهاتف، المدينة / المنطقة، الشارع، المبنى)' : 'Please fill all required fields');
     return;
   }
 
   // 1. Save customer details to localStorage (PERSISTS)
   const customerData = {
-    name, phone, email, governorate, city, street, building, apt, landmark, notes
+    name, phone, email, city, street, building, apt, landmark, notes
   };
   state.customer = customerData;
   localStorage.setItem('qetaf_customer', JSON.stringify(customerData));
@@ -1046,7 +1034,7 @@ function sendOrderEmails(orderPayload) {
     `- ${i.product.name_ar} (${i.product.name_en}) × ${i.qty} = ${i.product.final_price * i.qty} ${orderPayload.currency}`
   ).join('\n');
 
-  const fullAddress = `${orderPayload.customer.governorate} - ${orderPayload.customer.city} - شارع ${orderPayload.customer.street} - مبنى ${orderPayload.customer.building}` +
+  const fullAddress = `${orderPayload.customer.city} - شارع ${orderPayload.customer.street} - مبنى ${orderPayload.customer.building}` +
     (orderPayload.customer.apt ? ` - شقة ${orderPayload.customer.apt}` : '') +
     (orderPayload.customer.landmark ? ` (علامة مميزة: ${orderPayload.customer.landmark})` : '');
 
@@ -1110,7 +1098,7 @@ function showOrderSuccessModal(orderId, customer, items, total) {
     const settings = state.storeData?.Settings || {};
     const whatsappNum = settings.whatsapp?.value_ar || '201001234567';
     const itemsList = items.map(i => `${i.product.name_ar} (${i.qty})`).join(', ');
-    const address = `${customer.governorate} - ${customer.city} - ${customer.street} ${customer.building}`;
+    const address = `${customer.city} - ${customer.street} ${customer.building}`;
     const text = encodeURIComponent(
       `مرحباً قطاف العسل 🍯\nأرغب في تأكيد طلبي رقم #${orderId}\nالاسم: ${customer.name}\nالهاتف: ${customer.phone}\nالعنوان: ${address}\nالمنتجات: ${itemsList}\nالإجمالي: ${total} ج.م`
     );

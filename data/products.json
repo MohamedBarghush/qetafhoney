@@ -258,9 +258,14 @@
       "value_en": "info@qetafhoney.com",
       "description": "Store owner email address for orders and inquiries"
     },
+    "delivery_coverage_notice": {
+      "value_ar": "التوصيل حاليا متاح فقط في مدينة الشروق و مدينتي و بدر و المدن المحيطة",
+      "value_en": "Delivery is currently available only in El Shorouk, Madinaty, Badr, and surrounding areas",
+      "description": "ملاحظة نطاق التوصيل في صفحة إتمام الشراء (Delivery coverage notice in checkout)"
+    },
     "address": {
-      "value_ar": "جمهورية مصر العربية - متاح التوصيل لكافة المحافظات",
-      "value_en": "Egypt - Delivery available to all governorates",
+      "value_ar": "مدينة الشروق، مدينتي، بدر والمدن المحيطة",
+      "value_en": "El Shorouk, Madinaty, Badr & surrounding areas",
       "description": "Physical address or delivery coverage"
     },
     "working_hours": {

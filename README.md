@@ -29,7 +29,8 @@ A modern, fast, and fully responsive e-commerce web application for 100% pure ra
   Clicking any product opens an interactive modal allowing customers to flip through all product images using arrows or thumbnail previews.
 - **Persistent Shopping Cart & Smart Checkout**:
   - Cart persists across reloads and visits.
-  - Customer details (Name, Phone, Governorate, City, Street, Building, Apt, Landmark, Notes, Email) are cached in `localStorage`.
+  - Customer details (Name, Phone, City / Area, Street, Building, Apt, Landmark, Notes, Email) are cached in `localStorage`.
+  - Configurable delivery coverage notice (editable directly via Excel Settings sheet).
   - **Upon checkout completion, the cart is cleared while customer details remain saved** for friction-free future orders.
   - Displays `"Order Complete, we will contact you soon"` (or Arabic equivalent) on completion.
   - Dispatches email alerts to both buyer and store owner via EmailJS + provides an instant one-click WhatsApp order confirmation option.
