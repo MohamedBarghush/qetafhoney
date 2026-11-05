@@ -449,6 +449,68 @@ function renderSmallOffers() {
 }
 
 /**
+ * Renders the product card action button or quantity stepper (+ / -)
+ * If cartQty > 0: shows [-] [qty] [+]
+ * If cartQty === 0: shows Add to Cart button
+ */
+function renderCardActionButtonHtml(product, cartQty) {
+  const isOutOfStock = String(product.stock_status).toLowerCase().includes('out') || 
+                       String(product.stock_status).includes('غير') || 
+                       String(product.stock_status).includes('نفد');
+  
+  if (isOutOfStock) {
+    return `
+      <button type="button" class="btn btn-primary btn-add-cart" disabled>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+        <span>${i18n[state.lang].out_of_stock}</span>
+      </button>
+    `;
+  }
+
+  if (cartQty > 0) {
+    return `
+      <div class="card-qty-stepper" data-product-id="${product.id}" onclick="event.stopPropagation()">
+        <button type="button" class="card-stepper-btn btn-minus" 
+                onclick="event.stopPropagation(); updateCartQty('${product.id}', -1)" 
+                title="${cartQty === 1 ? (state.lang === 'ar' ? 'حذف من السلة' : 'Remove from cart') : (state.lang === 'ar' ? 'إنقاص' : 'Decrease')}">
+          ${cartQty === 1 
+            ? `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M10 11v6M14 11v6"/></svg>` 
+            : `−`}
+        </button>
+        <span class="card-stepper-val">${cartQty}</span>
+        <button type="button" class="card-stepper-btn btn-plus" 
+                onclick="event.stopPropagation(); updateCartQty('${product.id}', 1)" 
+                title="${state.lang === 'ar' ? 'زيادة' : 'Increase'}">
+          +
+        </button>
+      </div>
+    `;
+  }
+
+  return `
+    <button type="button" class="btn btn-primary btn-add-cart" 
+            onclick="event.stopPropagation(); addToCart('${product.id}', 1)">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+      <span>${i18n[state.lang].add_to_cart}</span>
+    </button>
+  `;
+}
+
+function updateAllProductCardButtons() {
+  if (!state.storeData || !state.storeData.Products) return;
+  
+  document.querySelectorAll('.card-action-slot').forEach(slot => {
+    const productId = slot.getAttribute('data-slot-id');
+    const product = state.storeData.Products.find(p => p.id === productId);
+    if (!product) return;
+    
+    const cartItem = state.cart.find(i => i.id === productId);
+    const cartQty = cartItem ? cartItem.qty : 0;
+    slot.innerHTML = renderCardActionButtonHtml(product, cartQty);
+  });
+}
+
+/**
  * Category Filter Tags
  */
 function renderCategories() {
@@ -558,6 +620,8 @@ function renderProducts() {
     const isOutOfStock = String(product.stock_status).toLowerCase().includes('out') || String(product.stock_status).includes('غير') || String(product.stock_status).includes('نفد');
     const mainImg = product.image_paths[0] || 'assets/images/landing/offers/offer1.jpg';
     const currency = i18n[state.lang].currency;
+    const cartItem = state.cart.find(i => i.id === product.id);
+    const cartQty = cartItem ? cartItem.qty : 0;
 
     return `
       <div class="product-card" data-id="${product.id}">
@@ -586,13 +650,10 @@ function renderProducts() {
 
           <!-- Actions -->
           <div class="product-card-actions">
-            <button class="btn btn-primary btn-add-cart" 
-                    ${isOutOfStock ? 'disabled' : ''} 
-                    onclick="addToCart('${product.id}', 1)">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
-              <span>${isOutOfStock ? i18n[state.lang].out_of_stock : i18n[state.lang].add_to_cart}</span>
-            </button>
-            <button class="btn-quick-view" onclick="openProductModal('${product.id}')" title="${i18n[state.lang].quick_view}">
+            <div class="card-action-slot" data-slot-id="${product.id}">
+              ${renderCardActionButtonHtml(product, cartQty)}
+            </div>
+            <button type="button" class="btn-quick-view" onclick="event.stopPropagation(); openProductModal('${product.id}')" title="${i18n[state.lang].quick_view}">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
             </button>
           </div>
@@ -660,9 +721,10 @@ function openProductModal(productId) {
     tagsBox.innerHTML = '';
   }
 
-  // Stepper reset
+  // Stepper initialization: show current cart quantity if already in cart, else 1
+  const existingCartItem = state.cart.find(i => i.id === product.id);
   const qtyInput = document.getElementById('modalQtyInput');
-  if (qtyInput) qtyInput.value = 1;
+  if (qtyInput) qtyInput.value = existingCartItem ? existingCartItem.qty : 1;
 
   // Add to cart button state
   const addBtn = document.getElementById('modalAddToCartBtn');
@@ -764,7 +826,12 @@ function addToCart(productId, quantity = 1) {
 
 function updateCartQty(productId, delta) {
   const index = state.cart.findIndex(i => i.id === productId);
-  if (index === -1) return;
+  if (index === -1) {
+    if (delta > 0) {
+      addToCart(productId, delta);
+    }
+    return;
+  }
 
   state.cart[index].qty += delta;
   if (state.cart[index].qty <= 0) {
@@ -805,6 +872,9 @@ function renderCart() {
   if (subtotalEl) {
     subtotalEl.textContent = `${totalAmount} ${currency}`;
   }
+
+  // Keep all product card buttons (+ / - steppers) 100% synchronized
+  updateAllProductCardButtons();
 
   if (!itemsContainer) return;
 
