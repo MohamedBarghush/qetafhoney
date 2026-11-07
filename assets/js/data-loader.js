@@ -236,67 +236,237 @@ const DataLoader = (() => {
       }
     ],
     Settings: {
-      announcement_text: {
-        value_ar: "عروض حصرية لفترة محدودة: شحن مجاني للطلبات بقيمة 500 ج فأكثر! 🍯",
-        value_en: "Limited Time Offer: Free shipping on orders over 500 EGP! 🍯"
+      "announcement_text": {
+            "value_ar": "الحق عروض الجمعة البيضاء. خصم 25% على جميع المنتجات",
+            "value_en": "White Friday Sale. 25% off all products",
+            "description": "Banner text at top of site. Leave empty if you don't want to display it."
       },
-      store_name: {
-        value_ar: "قطاف العسل | Qetaf Honey",
-        value_en: "Qetaf Honey"
+      "store_name": {
+            "value_ar": "عسل قطاف | Qetaf Honey",
+            "value_en": "Qetaf Honey",
+            "description": "Store brand name"
       },
-      tagline: {
-        value_ar: "نقاء الطبيعة.. من المناحل إلى مائدتكم مباشرة",
-        value_en: "Nature's Purest Harvest Straight to Your Table"
+      "tagline": {
+            "value_ar": "نقاء الطبيعة.. من المناحل إلى مائدتكم مباشرة",
+            "value_en": "Nature's Purest Harvest Straight to Your Table",
+            "description": "Store tagline"
       },
-      phone: {
-        value_ar: "+20 100 123 4567",
-        value_en: "+20 100 123 4567"
+      "phone": {
+            "value_ar": "+20 100 123 4567",
+            "value_en": "+20 100 123 4567",
+            "description": "Contact phone number"
       },
-      whatsapp: {
-        value_ar: "201001234567",
-        value_en: "201001234567"
+      "whatsapp": {
+            "value_ar": "201001234567",
+            "value_en": "201001234567",
+            "description": "WhatsApp number without + or spaces for direct chat/ordering"
       },
-      email: {
-        value_ar: "info@qetafhoney.com",
-        value_en: "info@qetafhoney.com"
+      "email": {
+            "value_ar": "info@qetafhoney.com",
+            "value_en": "info@qetafhoney.com",
+            "description": "Store owner email address for orders and inquiries"
       },
-      delivery_coverage_notice: {
-        value_ar: "التوصيل حاليا متاح فقط في مدينة الشروق و مدينتي و بدر و المدن المحيطة",
-        value_en: "Delivery is currently available only in El Shorouk, Madinaty, Badr, and surrounding areas"
+      "address": {
+            "value_ar": "جمهورية مصر العربية - القاهرة - مدينة الشروق",
+            "value_en": "Egypt - Cairo - El-Shorouk City",
+            "description": "Physical address or delivery coverage"
       },
-      address: {
-        value_ar: "مدينة الشروق، مدينتي، بدر والمدن المحيطة",
-        value_en: "El Shorouk, Madinaty, Badr & surrounding areas"
+      "working_hours": {
+            "value_ar": "يومياً من 10 صباحاً حتى 10 مساءً",
+            "value_en": "Daily from 10:00 AM to 10:00 PM",
+            "description": "Working hours"
       },
-      working_hours: {
-        value_ar: "يومياً من 9 صباحاً حتى 10 مساءً",
-        value_en: "Daily from 9:00 AM to 10:00 PM"
+      "facebook_url": {
+            "value_ar": "https://facebook.com/qetafhoney",
+            "value_en": "https://facebook.com/qetafhoney",
+            "description": "Facebook page URL"
       },
-      facebook_url: {
-        value_ar: "https://facebook.com/qetafhoney",
-        value_en: "https://facebook.com/qetafhoney"
+      "instagram_url": {
+            "value_ar": "https://instagram.com/qetafhoney",
+            "value_en": "https://instagram.com/qetafhoney",
+            "description": "Instagram page URL"
       },
-      instagram_url: {
-        value_ar: "https://instagram.com/qetafhoney",
-        value_en: "https://instagram.com/qetafhoney"
+      "delivery_coverage_notice": {
+            "value_ar": "التوصيل حاليا متاح فقط في مدينة الشروق و مدينتي و بدر و المدن المحيطة",
+            "value_en": "Delivery is currently available only in El Shorouk, Madinaty, Badr, and surrounding areas",
+            "description": "تنبيه نطاق التوصيل في صفحة إتمام الطلب"
       },
-      emailjs_service_id: {
-        value_ar: "service_qetaf",
-        value_en: "service_qetaf"
+      "order_success_title": {
+            "value_ar": "تم انشاء طلبك",
+            "value_en": "Your Order Has Been Created",
+            "description": "العنوان الكبير لرسالة نجاح إتمام الطلب"
       },
-      emailjs_template_buyer: {
-        value_ar: "template_buyer_order",
-        value_en: "template_buyer_order"
+      "order_success_subtitle": {
+            "value_ar": "سيتم التواصل معك لتأكيد طلبك و البدء بعملية التوصيل",
+            "value_en": "We will contact you to confirm your order and begin the delivery process",
+            "description": "النص التوضيحي لرسالة نجاح إتمام الطلب"
       },
-      emailjs_template_seller: {
-        value_ar: "template_seller_order",
-        value_en: "template_seller_order"
+      "offers_section_title": {
+            "value_ar": "عروض وخصومات مميزة",
+            "value_en": "Exclusive Offers & Deals",
+            "description": "عنوان قسم العروض في الصفحة الرئيسية"
       },
-      emailjs_public_key: {
-        value_ar: "YOUR_PUBLIC_KEY",
-        value_en: "YOUR_PUBLIC_KEY"
+      "offers_section_subtitle": {
+            "value_ar": "تشكيلة من أفضل العروض الحصرية وباقات التوفير العائلية",
+            "value_en": "A curated selection of exclusive offers & family value bundles",
+            "description": "النص الوصفي تحت عنوان قسم العروض"
+      },
+      "products_section_title": {
+            "value_ar": "المنتجات",
+            "value_en": "Our Products",
+            "description": "عنوان صفحة/قسم المنتجات"
+      },
+      "products_section_subtitle": {
+            "value_ar": "استكشف باقتنا المتنوعة من الأعسال الطبيعية النادرة ومنتجات الخلية الملكية",
+            "value_en": "Explore our diverse range of rare raw honeys and royal hive treasures",
+            "description": "النص الوصفي تحت عنوان قسم المنتجات"
+      },
+      "about_hero_title": {
+            "value_ar": "قصتنا في قطاف العسل",
+            "value_en": "Our Story at Qetaf Honey",
+            "description": "عنوان صفحة من نحن"
+      },
+      "about_hero_subtitle": {
+            "value_ar": "رحلة من الشغف بنقاء الطبيعة، نعتني بالنحل لنمنحكم عسلاً كما أراده الخالق.",
+            "value_en": "A passionate journey to preserve nature's golden gift just as nature intended.",
+            "description": "الوصف التمهيدي لصفحة من نحن"
+      },
+      "about_p1": {
+            "value_ar": "في «قطاف العسل»، بدأنا رحلتنا من إيمان راسخ بأن العسل الطبيعي ليس مجرد غذاء بل هو شفاء وطاقة حيوية نقية. نختار مواقع مناحلنا بعناية في البيئات الجبلية والوديان والبراري المفتوحة بعيداً عن التلوث والمبيدات.",
+            "value_en": "At Qetaf Honey, our passion was sparked by the understanding that pure raw honey is more than food—it is living wellness and holistic vitality. We locate our apiaries in untouched mountain valleys and wild botanical sanctuaries.",
+            "description": "الفقرة الأولى في قصة من نحن"
+      },
+      "about_p2": {
+            "value_ar": "نلتزم بأعلى معايير فرز وتعبئة العسل دون تسخين أو فلترة مفرطة لنحافظ على كامل الإنزيمات الحية، الفيتامينات، وفوائد حبوب اللقاح الطبيعية، ليصلكم من المنحل إلى مائدتكم بكامل قيمته الغذائية.",
+            "value_en": "We adhere to uncompromised harvesting standards without excessive filtration or heat damage, preserving living enzymes, natural antioxidants, and precious flower pollens directly to your home.",
+            "description": "الفقرة الثانية في قصة من نحن"
+      },
+      "values_section_title": {
+            "value_ar": "قيمنا والتزامنا تجاهكم",
+            "value_en": "Our Values & Commitment",
+            "description": "عنوان قسم القيم والتعهدات"
+      },
+      "values_section_subtitle": {
+            "value_ar": "المعايير التي نحرص عليها في كل قطرة عسل تصل إلى بيتك",
+            "value_en": "The standards we uphold in every drop of honey delivered to your home",
+            "description": "الوصف تحت عنوان قسم القيم"
+      },
+      "val_1_title": {
+            "value_ar": "أمانة ومصداقية",
+            "value_en": "Authentic Purity",
+            "description": "عنوان القيمة 1"
+      },
+      "val_1_desc": {
+            "value_ar": "نضمن نقاء كل قطرة عسل نقدمها، ونلتزم بالفحص الدوري بأدق المختبرات المتخصصة.",
+            "value_en": "Every single drop is certified pure, supported by comprehensive laboratory testing.",
+            "description": "وصف القيمة 1"
+      },
+      "val_2_title": {
+            "value_ar": "إنتاج طبيعي مستدام",
+            "value_en": "Sustainable Beekeeping",
+            "description": "عنوان القيمة 2"
+      },
+      "val_2_desc": {
+            "value_ar": "نتبع ممارسات تربية نحل رحيمة وصديقة للبيئة تضمن صحة النحل وتنوع المحاصيل.",
+            "value_en": "We practice ethical, bee-first apiculture ensuring healthy colonies and thriving biodiversity.",
+            "description": "وصف القيمة 2"
+      },
+      "val_3_title": {
+            "value_ar": "تنوع وجودة استثنائية",
+            "value_en": "Rare & Diverse Selection",
+            "description": "عنوان القيمة 3"
+      },
+      "val_3_desc": {
+            "value_ar": "نوفر لكم تشكيلة واسعة من أعسال السدر الجبلي والأعشاب الطبية ومنتجات الخلية الملكية.",
+            "value_en": "Offering world-class mountain Sidr, herbal honeys, propolis, and fresh royal jelly blends.",
+            "description": "وصف القيمة 3"
+      },
+      "val_4_title": {
+            "value_ar": "ثقة ورضا عملائنا",
+            "value_en": "Customer Trust & Satisfaction",
+            "description": "عنوان القيمة 4"
+      },
+      "val_4_desc": {
+            "value_ar": "آلاف العملاء يثقون في قطاف كمصدرهم المعتمد للعسل الطبيعي والمكملات الغذائية.",
+            "value_en": "Thousands of families cherish Qetaf as their trusted natural wellness partner.",
+            "description": "وصف القيمة 4"
+      },
+      "faq_section_title": {
+            "value_ar": "الأسئلة الشائعة",
+            "value_en": "Frequently Asked Questions",
+            "description": "عنوان قسم الأسئلة الشائعة"
+      },
+      "faq_1_q": {
+            "value_ar": "كيف أتأكد من أن عسل قطاف طبيعي 100%؟",
+            "value_en": "How do I know Qetaf honey is 100% pure?",
+            "description": "السؤال الشائع 1"
+      },
+      "faq_1_a": {
+            "value_ar": "جميع أعسالنا تخضع للفحص المخبري الدوري للتحقق من نسب السكروز والإنزيمات والنقاء التام. كما نقدم ضمان استرجاع كامل في حال ثبت عدم نقاء العسل.",
+            "value_en": "Our honey undergoes stringent third-party laboratory analysis verifying sucrose levels, moisture, and active pollen count. We provide a full money-back guarantee.",
+            "description": "إجابة السؤال 1"
+      },
+      "faq_2_q": {
+            "value_ar": "هل العسل يتبلور؟ وهل التبلور دليل على الغش؟",
+            "value_en": "Does raw honey crystallize? Is crystallization bad?",
+            "description": "السؤال الشائع 2"
+      },
+      "faq_2_a": {
+            "value_ar": "على العكس تماماً! التبلور (التجمد) هو خاصية فيزيائية طبيعية تحدث لبعض أنواع العسل الخام غير المبستر مثل عسل الموالح والبرسيم، وهو أكبر دليل على أن العسل طبيعي وحي ولم يتعرض لحرارة عالية تتلف فوائده.",
+            "value_en": "Not at all! Crystallization is a natural physical hallmark of unpasteurized, enzyme-rich raw honey. It confirms that the honey was never overheated or artificially processed.",
+            "description": "إجابة السؤال 2"
+      },
+      "faq_3_q": {
+            "value_ar": "ما هي مدة التوصيل وتكلفة الشحن؟",
+            "value_en": "What are your delivery times and shipping costs?",
+            "description": "السؤال الشائع 3"
+      },
+      "faq_3_a": {
+            "value_ar": "يستغرق التوصيل عادة من 24 إلى 48 ساعة داخل مدينة الشروق ومدينتي وبدر والمدن المحيطة. الشحن مجاني للطلبات التي تتجاوز 500 جنيه.",
+            "value_en": "Orders in El Shorouk, Madinaty, Badr, and surrounding areas arrive within 24-48 hours. Free delivery applies on orders above 500 EGP.",
+            "description": "إجابة السؤال 3"
+      },
+      "footer_contact_heading": {
+            "value_ar": "معلومات التواصل",
+            "value_en": "Contact Info",
+            "description": "عنوان عمود التواصل في الفوتر"
+      },
+      "footer_links_heading": {
+            "value_ar": "روابط سريعة",
+            "value_en": "Quick Links",
+            "description": "عنوان عمود الروابط السريعة في الفوتر"
+      },
+      "footer_guarantee_title": {
+            "value_ar": "ضمان قطاف الذهبي",
+            "value_en": "Qetaf Golden Guarantee",
+            "description": "عنوان الضمان في الفوتر"
+      },
+      "footer_guarantee_text": {
+            "value_ar": "نضمن لك نقاء منتجاتنا بنسبة 100%.. إن لم ينل العسل رضاك، يمكنك استرجاعه واسترداد قيمته كاملة.",
+            "value_en": "100% satisfaction guaranteed. If you are not delighted with your honey, return it for a complete hassle-free refund.",
+            "description": "نص الضمان في الفوتر"
+      },
+      "copyright_text": {
+            "value_ar": "جميع الحقوق محفوظة © قطاف العسل",
+            "value_en": "All Rights Reserved © Qetaf Honey",
+            "description": "نص حقوق الملكية أسفل الموقع"
+      },
+      "emailjs_service_id": {
+            "value_ar": "service_qetaf",
+            "value_en": "service_qetaf",
+            "description": "EmailJS Service ID (optional, see instructions)"
+      },
+      "emailjs_template_seller": {
+            "value_ar": "template_seller_order",
+            "value_en": "template_seller_order",
+            "description": "EmailJS Store Owner Notification Template ID"
+      },
+      "emailjs_public_key": {
+            "value_ar": "YOUR_PUBLIC_KEY",
+            "value_en": "YOUR_PUBLIC_KEY",
+            "description": "EmailJS Public Key"
       }
-    }
+}
   };
 
   /**

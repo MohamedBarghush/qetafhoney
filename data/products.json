@@ -2,72 +2,27 @@
   "Products": [
     {
       "id": "P001",
-      "name_ar": "عسل سدر كشميري جبلي فاخر",
-      "name_en": "Premium Kashmiri Mountain Sidr Honey",
-      "price": 450,
-      "discount_percent": 20,
+      "name_ar": "عسل نوارة البرسيم 950جم",
+      "name_en": "Clover Honey 950g",
+      "price": 250,
+      "discount_percent": 25,
       "stock_status": "In Stock",
-      "image_paths": "assets/images/products/sidr-kashmiri/1.jpg, assets/images/products/sidr-kashmiri/2.jpg, assets/images/products/sidr-kashmiri/3.jpg",
-      "category_ar": "عسل سدر",
-      "category_en": "Sidr Honey",
-      "tags": "سدر, جبلي, فاخر, مناعة",
-      "description_ar": "عسل سدر كشميري نقي 100% مستخلص من زهور شجرة السدر البرية في الجبال العالية. يتميز بلونه الذهبي الداكن وقوامه الكثيف ونكهته العطرية المميزة. مثالي لتقوية جهاز المناعة وصحة الجهاز الهضمي.",
-      "description_en": "100% pure Kashmiri Sidr honey harvested from wild Sidr trees in high altitude mountains. Features a rich amber color, dense texture, and exquisite aromatic flavor. Exceptional for immune support and digestive vitality.",
+      "image_paths": "assets/images/products/clover-honey 950g/1.jpg",
+      "category_ar": "عسل زهور",
+      "category_en": "Floral Honey",
+      "tags": "برسيم, بلدي, يومي, اقتصادي",
+      "description_ar": "عسل برسيم نقي من أراضي الدلتا الخصبة، عسل يومي ممتاز خفيف ولطيف على المعدة ومثالي كبديل صحي وطبيعي للسكر الأبيض في التحلية.",
+      "description_en": "Authentic pure Egyptian clover honey from fertile pastoral fields. Sweet, gentle on digestion, and an ideal natural daily alternative to refined sugar.",
       "featured": "Yes"
     },
     {
       "id": "P002",
-      "name_ar": "عسل حبة البركة النقي",
-      "name_en": "Pure Black Seed Honey",
-      "price": 320,
-      "discount_percent": 15,
+      "name_ar": "عسل نوارة البرسيم 450جم",
+      "name_en": "Clover Honey 450g",
+      "price": 125,
+      "discount_percent": 25,
       "stock_status": "In Stock",
-      "image_paths": "assets/images/products/black-seed/1.jpg, assets/images/products/black-seed/2.jpg, assets/images/products/black-seed/3.jpg",
-      "category_ar": "عسل أعشاب",
-      "category_en": "Herbal Honey",
-      "tags": "حبة البركة, تنفس, مناعة, طاقة",
-      "description_ar": "عسل نحل طبيعي يتغذى نحله على رحيق زهور الحبة السوداء المباركة. ذو نكهة قوية وفوائد علاجية فائقة للصحة العامة والتنفس ومقاومة الإجهاد.",
-      "description_en": "Natural raw honey gathered from the delicate blossoms of the blessed Nigella Sativa (Black Seed) plant. Renowned for its bold earthy taste and remarkable wellness benefits.",
-      "featured": "Yes"
-    },
-    {
-      "id": "P003",
-      "name_ar": "عسل الزهور الجبلية البرية",
-      "name_en": "Wild Mountain Floral Honey",
-      "price": 280,
-      "discount_percent": 0,
-      "stock_status": "In Stock",
-      "image_paths": "assets/images/products/mountain-wild/1.jpg, assets/images/products/mountain-wild/2.jpg, assets/images/products/mountain-wild/3.jpg",
-      "category_ar": "عسل زهور",
-      "category_en": "Floral Honey",
-      "tags": "زهور, جبلية, طبيعي, مائدة",
-      "description_ar": "عسل بري متميز تم جنيه من رحيق أزهار برية متنوعة في الوديان والمناطق الجبلية النقية. خفيف المذاق وغني بالمعادن والفيتامينات الطبيعية ومثالي للإفطار والمشروبات.",
-      "description_en": "Delicate raw wildflower honey collected from diverse blossoms in untouched mountain valleys. Mild, naturally sweet, and loaded with essential floral enzymes.",
-      "featured": "No"
-    },
-    {
-      "id": "P004",
-      "name_ar": "عسل زهور الموالح المنعش",
-      "name_en": "Fresh Citrus Blossom Honey",
-      "price": 240,
-      "discount_percent": 10,
-      "stock_status": "In Stock",
-      "image_paths": "assets/images/products/citrus-blossom/1.jpg, assets/images/products/citrus-blossom/2.jpg, assets/images/products/citrus-blossom/3.jpg",
-      "category_ar": "عسل زهور",
-      "category_en": "Floral Honey",
-      "tags": "موالح, برتقال, أطفال, فيتامين سي",
-      "description_ar": "مستخلص من بساتين البرتقال والليمون العطرة. يتميز بلونه الذهبي الفاتح ونكهة الحمضيات المنعشة وغناه بفيتامين ج، محبوب جداً للأطفال وتهدئة الأعصاب.",
-      "description_en": "Harvested from fragrant orange and lemon groves. Features a light golden hue, refreshing delicate citrus notes, and natural Vitamin C. A favorite for breakfast and kids.",
-      "featured": "Yes"
-    },
-    {
-      "id": "P005",
-      "name_ar": "عسل برسيم طبيعي بلدي",
-      "name_en": "Pure Natural Clover Honey",
-      "price": 190,
-      "discount_percent": 0,
-      "stock_status": "In Stock",
-      "image_paths": "assets/images/products/clover-honey/1.jpg, assets/images/products/clover-honey/2.jpg, assets/images/products/clover-honey/3.jpg",
+      "image_paths": "assets/images/products/clover-honey 450g/1.jpg",
       "category_ar": "عسل زهور",
       "category_en": "Floral Honey",
       "tags": "برسيم, بلدي, يومي, اقتصادي",
@@ -76,48 +31,93 @@
       "featured": "No"
     },
     {
-      "id": "P006",
-      "name_ar": "معجون عسل العكبر الطبيعي (البروبوليس)",
-      "name_en": "Raw Propolis Honey Paste",
-      "price": 390,
+      "id": "P003",
+      "name_ar": "عسل الموالح 950جم",
+      "name_en": "Citrus Blossom Honey 950g",
+      "price": 320,
       "discount_percent": 25,
       "stock_status": "In Stock",
-      "image_paths": "assets/images/products/propolis-honey/1.jpg, assets/images/products/propolis-honey/2.jpg, assets/images/products/propolis-honey/3.jpg",
-      "category_ar": "منتجات الخلية",
-      "category_en": "Bee Products",
-      "tags": "عكبر, بروبوليس, مضاد حيوي, حماية",
-      "description_ar": "مزيج علاجي مركز يجمع بين عسل السدر الطبيعي وصمغ العكبر النقي (البروبوليس). يعد أقوى مضاد حيوي طبيعي لتعزيز المناعة ومحاربة الفيروسات والتهابات الحلق.",
-      "description_en": "A therapeutic superfood formulation blending pure raw honey with concentrated natural bee propolis. Acts as a potent natural defense against seasonal threats.",
-      "featured": "Yes"
+      "image_paths": "assets/images/products/citrus-blossom 950g/1.jpg",
+      "category_ar": "عسل زهور",
+      "category_en": "Floral Honey",
+      "tags": "موالح, برتقال, أطفال, فيتامين سي",
+      "description_ar": "مستخلص من بساتين البرتقال والليمون العطرة. يتميز بلونه الذهبي الفاتح ونكهة الحمضيات المنعشة وغناه بفيتامين ج، محبوب جداً للأطفال وتهدئة الأعصاب.",
+      "description_en": "Harvested from fragrant orange and lemon groves. Features a light golden hue, refreshing delicate citrus notes, and natural Vitamin C. A favorite for breakfast and kids.",
+      "featured": "No"
+    },
+    {
+      "id": "P004",
+      "name_ar": "عسل الموالح 450جم",
+      "name_en": "Citrus Blossom Honey 450g",
+      "price": 160,
+      "discount_percent": 25,
+      "stock_status": "In Stock",
+      "image_paths": "assets/images/products/citrus-blossom 450g/1.jpg",
+      "category_ar": "عسل زهور",
+      "category_en": "Floral Honey",
+      "tags": "موالح, برتقال, أطفال, فيتامين سي",
+      "description_ar": "مستخلص من بساتين البرتقال والليمون العطرة. يتميز بلونه الذهبي الفاتح ونكهة الحمضيات المنعشة وغناه بفيتامين ج، محبوب جداً للأطفال وتهدئة الأعصاب.",
+      "description_en": "Harvested from fragrant orange and lemon groves. Features a light golden hue, refreshing delicate citrus notes, and natural Vitamin C. A favorite for breakfast and kids.",
+      "featured": "No"
+    },
+    {
+      "id": "P005",
+      "name_ar": "عسل حبة البركة 950جم",
+      "name_en": "Black-Seed Honey 950g",
+      "price": 320,
+      "discount_percent": 25,
+      "stock_status": "In Stock",
+      "image_paths": "assets/images/products/black-seed 950g/1.jpg",
+      "category_ar": "عسل أعشاب",
+      "category_en": "Herbal Honey",
+      "tags": "حبة البركة, تنفس, مناعة, طاقة",
+      "description_ar": "عسل نحل طبيعي يتغذى نحله على رحيق زهور الحبة السوداء المباركة. ذو نكهة قوية وفوائد علاجية فائقة للصحة العامة والتنفس ومقاومة الإجهاد.",
+      "description_en": "Natural raw honey gathered from the delicate blossoms of the blessed Nigella Sativa (Black Seed) plant. Renowned for its bold earthy taste and remarkable wellness benefits.",
+      "featured": "No"
+    },
+    {
+      "id": "P006",
+      "name_ar": "عسل حبة البركة 450جم",
+      "name_en": "Black-Seed Honey 450g",
+      "price": 160,
+      "discount_percent": 25,
+      "stock_status": "In Stock",
+      "image_paths": "assets/images/products/black-seed 450g/1.jpg",
+      "category_ar": "عسل أعشاب",
+      "category_en": "Herbal Honey",
+      "tags": "حبة البركة, تنفس, مناعة, طاقة",
+      "description_ar": "عسل نحل طبيعي يتغذى نحله على رحيق زهور الحبة السوداء المباركة. ذو نكهة قوية وفوائد علاجية فائقة للصحة العامة والتنفس ومقاومة الإجهاد.",
+      "description_en": "Natural raw honey gathered from the delicate blossoms of the blessed Nigella Sativa (Black Seed) plant. Renowned for its bold earthy taste and remarkable wellness benefits.",
+      "featured": "No"
     },
     {
       "id": "P007",
-      "name_ar": "خلطة الطاقة الملكية (غذاء ملكات + لقاح)",
-      "name_en": "Royal Energy Blend (Royal Jelly & Pollen)",
-      "price": 480,
-      "discount_percent": 0,
-      "stock_status": "In Stock",
-      "image_paths": "assets/images/products/royal-jelly-blend/1.jpg, assets/images/products/royal-jelly-blend/2.jpg, assets/images/products/royal-jelly-blend/3.jpg",
-      "category_ar": "منتجات الخلية",
-      "category_en": "Bee Products",
-      "tags": "غذاء ملكات, حبوب لقاح, نشاط, خصوبة",
-      "description_ar": "إكسير الحيوية والنشاط! خلطة حصرية تتكون من عسل السدر الصافي مع غذاء الملكات الطازج وحبوب لقاح النحل وغبار الطلع. تمد الجسم بنشاط فوري وتزيد التركيز والقدرة البدنية.",
-      "description_en": "An exquisite tonic blend of raw honey, fresh royal jelly, multi-flower bee pollen, and propolis. Provides sustained mental clarity, vitality, and physical stamina.",
-      "featured": "Yes"
+      "name_ar": "عسل البردقوش 950جم",
+      "name_en": "Margoram Honey 950g",
+      "price": 350,
+      "discount_percent": 25,
+      "stock_status": "Out of Stock",
+      "image_paths": "assets/images/products/marjoram-honey 950g/1.jpg",
+      "category_ar": "عسل زهور",
+      "category_en": "Floral Honey",
+      "tags": "بردقوش, مهدئ, هضم, طبيعي",
+      "description_ar": "عسل طبيعي متميز مستخلص من رحيق أزهار نبات البردقوش العطري. يتميز بقوامه الخفيف ونكهته الدافئة اللطيفة، ومثالي لتعزيز الاسترخاء، وتهدئة الأعصاب، ودعم صحة الجهاز الهضمي والقولون.",
+      "description_en": "A premium natural honey harvested from the nectar of aromatic Marjoram blossoms. Characterized by its light texture and pleasantly warm flavor, it is ideal for promoting relaxation, soothing the nerves, and supporting digestive and colon health.",
+      "featured": "No"
     },
     {
       "id": "P008",
-      "name_ar": "بوكس إهداء قطاف الفاخر (3 عبوات مختارة)",
-      "name_en": "Qetaf Luxury Trio Gift Box",
-      "price": 750,
-      "discount_percent": 15,
+      "name_ar": "عسل البردقوش 450جم",
+      "name_en": "Margoram Honey 450g",
+      "price": 175,
+      "discount_percent": 25,
       "stock_status": "Out of Stock",
-      "image_paths": "assets/images/products/gift-box-trio/1.jpg, assets/images/products/gift-box-trio/2.jpg, assets/images/products/gift-box-trio/3.jpg",
-      "category_ar": "بكجات وهدايا",
-      "category_en": "Gift Bundles",
-      "tags": "هدية, بوكس, ثلاثي, فخامة",
-      "description_ar": "صندوق خشبي فاخر للإهداء يحتوي على 3 عبوات سعة 500 جرام (عسل سدر كشميري + عسل حبة البركة + عسل زهور برية) مع ملعقة عسل خشبية أصلية. هدية صحية راقية لمن تحب.",
-      "description_en": "An elegant handcrafted gift box containing three 500g premium honey jars (Kashmiri Sidr, Black Seed, and Wildflower) accompanied by a classic wooden honey dipper.",
+      "image_paths": "assets/images/products/marjoram-honey 450g/1.jpg",
+      "category_ar": "عسل زهور",
+      "category_en": "Floral Honey",
+      "tags": "بردقوش, مهدئ, هضم, طبيعي",
+      "description_ar": "عسل طبيعي متميز مستخلص من رحيق أزهار نبات البردقوش العطري. يتميز بقوامه الخفيف ونكهته الدافئة اللطيفة، ومثالي لتعزيز الاسترخاء، وتهدئة الأعصاب، ودعم صحة الجهاز الهضمي والقولون.",
+      "description_en": "A premium natural honey harvested from the nectar of aromatic Marjoram blossoms. Characterized by its light texture and pleasantly warm flavor, it is ideal for promoting relaxation, soothing the nerves, and supporting digestive and colon health.",
       "featured": "No"
     }
   ],
@@ -126,7 +126,7 @@
       "id": "HERO1",
       "title_ar": "أجود أنواع عسل النحل الطبيعي 100%",
       "title_en": "100% Pure & Raw Natural Honey",
-      "subtitle_ar": "مستخلص من أفضل المناحل البرية النقية، مفحوص مخبرياً ومضمون بالجودة الذهبية",
+      "subtitle_ar": "مستخلص من أفضل المناحل البرية النقية، ومضمون بالجودة الذهبية",
       "subtitle_en": "Harvested from certified pristine apiaries, lab tested with a golden purity guarantee",
       "badge_ar": "طبيعي 100%",
       "badge_en": "100% Pure",
@@ -229,12 +229,12 @@
   ],
   "Settings": {
     "announcement_text": {
-      "value_ar": "عروض حصرية لفترة محدودة: شحن مجاني للطلبات بقيمة 500 ج فأكثر! 🍯",
-      "value_en": "Limited Time Offer: Free shipping on orders over 500 EGP! 🍯",
+      "value_ar": "الحق عروض الجمعة البيضاء. خصم 25% على جميع المنتجات",
+      "value_en": "White Friday Sale. 25% off all products",
       "description": "Banner text at top of site. Leave empty if you don't want to display it."
     },
     "store_name": {
-      "value_ar": "قطاف العسل | Qetaf Honey",
+      "value_ar": "عسل قطاف | Qetaf Honey",
       "value_en": "Qetaf Honey",
       "description": "Store brand name"
     },
@@ -258,19 +258,14 @@
       "value_en": "info@qetafhoney.com",
       "description": "Store owner email address for orders and inquiries"
     },
-    "delivery_coverage_notice": {
-      "value_ar": "التوصيل حاليا متاح فقط في مدينة الشروق و مدينتي و بدر و المدن المحيطة",
-      "value_en": "Delivery is currently available only in El Shorouk, Madinaty, Badr, and surrounding areas",
-      "description": "ملاحظة نطاق التوصيل في صفحة إتمام الشراء (Delivery coverage notice in checkout)"
-    },
     "address": {
-      "value_ar": "مدينة الشروق، مدينتي، بدر والمدن المحيطة",
-      "value_en": "El Shorouk, Madinaty, Badr & surrounding areas",
+      "value_ar": "جمهورية مصر العربية - القاهرة - مدينة الشروق",
+      "value_en": "Egypt - Cairo - El-Shorouk City",
       "description": "Physical address or delivery coverage"
     },
     "working_hours": {
-      "value_ar": "يومياً من 9 صباحاً حتى 10 مساءً",
-      "value_en": "Daily from 9:00 AM to 10:00 PM",
+      "value_ar": "يومياً من 10 صباحاً حتى 10 مساءً",
+      "value_en": "Daily from 10:00 AM to 10:00 PM",
       "description": "Working hours"
     },
     "facebook_url": {
@@ -283,15 +278,175 @@
       "value_en": "https://instagram.com/qetafhoney",
       "description": "Instagram page URL"
     },
+    "delivery_coverage_notice": {
+      "value_ar": "التوصيل حاليا متاح فقط في مدينة الشروق و مدينتي و بدر و المدن المحيطة",
+      "value_en": "Delivery is currently available only in El Shorouk, Madinaty, Badr, and surrounding areas",
+      "description": "تنبيه نطاق التوصيل في صفحة إتمام الطلب"
+    },
+    "order_success_title": {
+      "value_ar": "تم انشاء طلبك",
+      "value_en": "Your Order Has Been Created",
+      "description": "العنوان الكبير لرسالة نجاح إتمام الطلب"
+    },
+    "order_success_subtitle": {
+      "value_ar": "سيتم التواصل معك لتأكيد طلبك و البدء بعملية التوصيل",
+      "value_en": "We will contact you to confirm your order and begin the delivery process",
+      "description": "النص التوضيحي لرسالة نجاح إتمام الطلب"
+    },
+    "offers_section_title": {
+      "value_ar": "عروض وخصومات مميزة",
+      "value_en": "Exclusive Offers & Deals",
+      "description": "عنوان قسم العروض في الصفحة الرئيسية"
+    },
+    "offers_section_subtitle": {
+      "value_ar": "تشكيلة من أفضل العروض الحصرية وباقات التوفير العائلية",
+      "value_en": "A curated selection of exclusive offers & family value bundles",
+      "description": "النص الوصفي تحت عنوان قسم العروض"
+    },
+    "products_section_title": {
+      "value_ar": "المنتجات",
+      "value_en": "Our Products",
+      "description": "عنوان صفحة/قسم المنتجات"
+    },
+    "products_section_subtitle": {
+      "value_ar": "استكشف باقتنا المتنوعة من الأعسال الطبيعية النادرة ومنتجات الخلية الملكية",
+      "value_en": "Explore our diverse range of rare raw honeys and royal hive treasures",
+      "description": "النص الوصفي تحت عنوان قسم المنتجات"
+    },
+    "about_hero_title": {
+      "value_ar": "قصتنا في قطاف العسل",
+      "value_en": "Our Story at Qetaf Honey",
+      "description": "عنوان صفحة من نحن"
+    },
+    "about_hero_subtitle": {
+      "value_ar": "رحلة من الشغف بنقاء الطبيعة، نعتني بالنحل لنمنحكم عسلاً كما أراده الخالق.",
+      "value_en": "A passionate journey to preserve nature's golden gift just as nature intended.",
+      "description": "الوصف التمهيدي لصفحة من نحن"
+    },
+    "about_p1": {
+      "value_ar": "في «قطاف العسل»، بدأنا رحلتنا من إيمان راسخ بأن العسل الطبيعي ليس مجرد غذاء بل هو شفاء وطاقة حيوية نقية. نختار مواقع مناحلنا بعناية في البيئات الجبلية والوديان والبراري المفتوحة بعيداً عن التلوث والمبيدات.",
+      "value_en": "At Qetaf Honey, our passion was sparked by the understanding that pure raw honey is more than food—it is living wellness and holistic vitality. We locate our apiaries in untouched mountain valleys and wild botanical sanctuaries.",
+      "description": "الفقرة الأولى في قصة من نحن"
+    },
+    "about_p2": {
+      "value_ar": "نلتزم بأعلى معايير فرز وتعبئة العسل دون تسخين أو فلترة مفرطة لنحافظ على كامل الإنزيمات الحية، الفيتامينات، وفوائد حبوب اللقاح الطبيعية، ليصلكم من المنحل إلى مائدتكم بكامل قيمته الغذائية.",
+      "value_en": "We adhere to uncompromised harvesting standards without excessive filtration or heat damage, preserving living enzymes, natural antioxidants, and precious flower pollens directly to your home.",
+      "description": "الفقرة الثانية في قصة من نحن"
+    },
+    "values_section_title": {
+      "value_ar": "قيمنا والتزامنا تجاهكم",
+      "value_en": "Our Values & Commitment",
+      "description": "عنوان قسم القيم والتعهدات"
+    },
+    "values_section_subtitle": {
+      "value_ar": "المعايير التي نحرص عليها في كل قطرة عسل تصل إلى بيتك",
+      "value_en": "The standards we uphold in every drop of honey delivered to your home",
+      "description": "الوصف تحت عنوان قسم القيم"
+    },
+    "val_1_title": {
+      "value_ar": "أمانة ومصداقية",
+      "value_en": "Authentic Purity",
+      "description": "عنوان القيمة 1"
+    },
+    "val_1_desc": {
+      "value_ar": "نضمن نقاء كل قطرة عسل نقدمها، ونلتزم بالفحص الدوري بأدق المختبرات المتخصصة.",
+      "value_en": "Every single drop is certified pure, supported by comprehensive laboratory testing.",
+      "description": "وصف القيمة 1"
+    },
+    "val_2_title": {
+      "value_ar": "إنتاج طبيعي مستدام",
+      "value_en": "Sustainable Beekeeping",
+      "description": "عنوان القيمة 2"
+    },
+    "val_2_desc": {
+      "value_ar": "نتبع ممارسات تربية نحل رحيمة وصديقة للبيئة تضمن صحة النحل وتنوع المحاصيل.",
+      "value_en": "We practice ethical, bee-first apiculture ensuring healthy colonies and thriving biodiversity.",
+      "description": "وصف القيمة 2"
+    },
+    "val_3_title": {
+      "value_ar": "تنوع وجودة استثنائية",
+      "value_en": "Rare & Diverse Selection",
+      "description": "عنوان القيمة 3"
+    },
+    "val_3_desc": {
+      "value_ar": "نوفر لكم تشكيلة واسعة من أعسال السدر الجبلي والأعشاب الطبية ومنتجات الخلية الملكية.",
+      "value_en": "Offering world-class mountain Sidr, herbal honeys, propolis, and fresh royal jelly blends.",
+      "description": "وصف القيمة 3"
+    },
+    "val_4_title": {
+      "value_ar": "ثقة ورضا عملائنا",
+      "value_en": "Customer Trust & Satisfaction",
+      "description": "عنوان القيمة 4"
+    },
+    "val_4_desc": {
+      "value_ar": "آلاف العملاء يثقون في قطاف كمصدرهم المعتمد للعسل الطبيعي والمكملات الغذائية.",
+      "value_en": "Thousands of families cherish Qetaf as their trusted natural wellness partner.",
+      "description": "وصف القيمة 4"
+    },
+    "faq_section_title": {
+      "value_ar": "الأسئلة الشائعة",
+      "value_en": "Frequently Asked Questions",
+      "description": "عنوان قسم الأسئلة الشائعة"
+    },
+    "faq_1_q": {
+      "value_ar": "كيف أتأكد من أن عسل قطاف طبيعي 100%؟",
+      "value_en": "How do I know Qetaf honey is 100% pure?",
+      "description": "السؤال الشائع 1"
+    },
+    "faq_1_a": {
+      "value_ar": "جميع أعسالنا تخضع للفحص المخبري الدوري للتحقق من نسب السكروز والإنزيمات والنقاء التام. كما نقدم ضمان استرجاع كامل في حال ثبت عدم نقاء العسل.",
+      "value_en": "Our honey undergoes stringent third-party laboratory analysis verifying sucrose levels, moisture, and active pollen count. We provide a full money-back guarantee.",
+      "description": "إجابة السؤال 1"
+    },
+    "faq_2_q": {
+      "value_ar": "هل العسل يتبلور؟ وهل التبلور دليل على الغش؟",
+      "value_en": "Does raw honey crystallize? Is crystallization bad?",
+      "description": "السؤال الشائع 2"
+    },
+    "faq_2_a": {
+      "value_ar": "على العكس تماماً! التبلور (التجمد) هو خاصية فيزيائية طبيعية تحدث لبعض أنواع العسل الخام غير المبستر مثل عسل الموالح والبرسيم، وهو أكبر دليل على أن العسل طبيعي وحي ولم يتعرض لحرارة عالية تتلف فوائده.",
+      "value_en": "Not at all! Crystallization is a natural physical hallmark of unpasteurized, enzyme-rich raw honey. It confirms that the honey was never overheated or artificially processed.",
+      "description": "إجابة السؤال 2"
+    },
+    "faq_3_q": {
+      "value_ar": "ما هي مدة التوصيل وتكلفة الشحن؟",
+      "value_en": "What are your delivery times and shipping costs?",
+      "description": "السؤال الشائع 3"
+    },
+    "faq_3_a": {
+      "value_ar": "يستغرق التوصيل عادة من 24 إلى 48 ساعة داخل مدينة الشروق ومدينتي وبدر والمدن المحيطة. الشحن مجاني للطلبات التي تتجاوز 500 جنيه.",
+      "value_en": "Orders in El Shorouk, Madinaty, Badr, and surrounding areas arrive within 24-48 hours. Free delivery applies on orders above 500 EGP.",
+      "description": "إجابة السؤال 3"
+    },
+    "footer_contact_heading": {
+      "value_ar": "معلومات التواصل",
+      "value_en": "Contact Info",
+      "description": "عنوان عمود التواصل في الفوتر"
+    },
+    "footer_links_heading": {
+      "value_ar": "روابط سريعة",
+      "value_en": "Quick Links",
+      "description": "عنوان عمود الروابط السريعة في الفوتر"
+    },
+    "footer_guarantee_title": {
+      "value_ar": "ضمان قطاف الذهبي",
+      "value_en": "Qetaf Golden Guarantee",
+      "description": "عنوان الضمان في الفوتر"
+    },
+    "footer_guarantee_text": {
+      "value_ar": "نضمن لك نقاء منتجاتنا بنسبة 100%.. إن لم ينل العسل رضاك، يمكنك استرجاعه واسترداد قيمته كاملة.",
+      "value_en": "100% satisfaction guaranteed. If you are not delighted with your honey, return it for a complete hassle-free refund.",
+      "description": "نص الضمان في الفوتر"
+    },
+    "copyright_text": {
+      "value_ar": "جميع الحقوق محفوظة © قطاف العسل",
+      "value_en": "All Rights Reserved © Qetaf Honey",
+      "description": "نص حقوق الملكية أسفل الموقع"
+    },
     "emailjs_service_id": {
       "value_ar": "service_qetaf",
       "value_en": "service_qetaf",
       "description": "EmailJS Service ID (optional, see instructions)"
-    },
-    "emailjs_template_buyer": {
-      "value_ar": "template_buyer_order",
-      "value_en": "template_buyer_order",
-      "description": "EmailJS Buyer Confirmation Template ID"
     },
     "emailjs_template_seller": {
       "value_ar": "template_seller_order",

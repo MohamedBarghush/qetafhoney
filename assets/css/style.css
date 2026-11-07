@@ -2120,6 +2120,15 @@ textarea.form-control {
   gap: 0.9rem;
 }
 
+
+/* Phone Number LTR isolation for Arabic/English */
+.phone-number, #footerPhone, #checkoutPhone {
+  direction: ltr !important;
+  unicode-bidi: isolate !important;
+  display: inline-block;
+  text-align: start;
+}
+
 .contact-row {
   display: flex;
   align-items: flex-start;

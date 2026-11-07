@@ -76,10 +76,13 @@ const i18n = {
     confirm_order: "تأكيد وإرسال الطلب",
     whatsapp_order: "تأكيد الطلب فوراً عبر واتساب",
     
-    // Success Modal
-    order_success_title: "تم استلام طلبك بنجاح! 🎉",
-    order_success_msg_with_email: "تم اكتمال الطلب، سنتواصل معك قريباً. تم إرسال تفاصيل الفاتورة إلى بريدك الإلكتروني.",
-    order_success_msg_no_email: "تم اكتمال الطلب، سنتواصل معك قريباً هاتفياً أو عبر واتساب لتأكيد موعد التوصيل.",
+    // Success Modal & Dynamic Texts
+    order_success_title: "تم انشاء طلبك",
+    order_success_subtitle: "سيتم التواصل معك لتأكيد طلبك و البدء بعملية التوصيل",
+    offers_section_title: "عروض وخصومات مميزة",
+    offers_section_subtitle: "تشكيلة من أفضل العروض الحصرية وباقات التوفير العائلية",
+    products_section_title: "المنتجات",
+    products_section_subtitle: "استكشف باقتنا المتنوعة من الأعسال الطبيعية النادرة ومنتجات الخلية الملكية",
     back_to_store: "العودة للتسوق",
     
     // About Us Content
@@ -165,10 +168,13 @@ const i18n = {
     confirm_order: "Confirm & Place Order",
     whatsapp_order: "Order Directly via WhatsApp",
     
-    // Success Modal
-    order_success_title: "Order Placed Successfully! 🎉",
-    order_success_msg_with_email: "Order Complete, we will contact you soon. Receipt details have been sent to your email.",
-    order_success_msg_no_email: "Order Complete, we will contact you soon via phone or WhatsApp to schedule delivery.",
+    // Success Modal & Dynamic Texts
+    order_success_title: "Your Order Has Been Created",
+    order_success_subtitle: "We will contact you to confirm your order and begin the delivery process",
+    offers_section_title: "Exclusive Offers & Deals",
+    offers_section_subtitle: "A curated selection of exclusive offers & family value bundles",
+    products_section_title: "Our Products",
+    products_section_subtitle: "Explore our diverse range of rare raw honeys and royal hive treasures",
     back_to_store: "Back to Shopping",
     
     // About Us Content
@@ -267,12 +273,90 @@ function setupLanguage(lang, rerender = true) {
 
   if (rerender && state.storeData) {
     renderAll();
+  } else if (state.storeData) {
+    renderDynamicSiteTexts();
   }
 }
 
 /**
  * Main Render Pipeline
  */
+
+/**
+ * Helper to get a localized setting from state.storeData.Settings (from Excel)
+ */
+function getSetting(key, fallbackAr = "", fallbackEn = "") {
+  const settings = state.storeData?.Settings || {};
+  const item = settings[key];
+  if (!item) {
+    return state.lang === 'ar' ? fallbackAr : (fallbackEn || fallbackAr);
+  }
+  const val = state.lang === 'ar' 
+    ? (item.value_ar !== undefined && String(item.value_ar).trim() !== "" ? item.value_ar : fallbackAr)
+    : (item.value_en !== undefined && String(item.value_en).trim() !== "" ? item.value_en : (item.value_ar || fallbackEn || fallbackAr));
+  return String(val).trim();
+}
+
+/**
+ * Dynamically updates all text slots on the website from Excel Settings
+ * Handles titles, subtitles, story, brand values, FAQs, footer, guarantee & copyright
+ */
+function renderDynamicSiteTexts() {
+  if (!state.storeData) return;
+
+  const setElText = (id, text) => {
+    const el = document.getElementById(id);
+    if (el && text !== undefined && text !== null && text !== "") {
+      el.textContent = text;
+    }
+  };
+
+  // Section titles & subtitles
+  setElText('offersSectionTitle', getSetting('offers_section_title', 'عروض وخصومات مميزة', 'Exclusive Offers & Deals'));
+  setElText('offersSectionSubtitle', getSetting('offers_section_subtitle', 'تشكيلة من أفضل العروض الحصرية وباقات التوفير العائلية', 'A curated selection of exclusive offers & family value bundles'));
+  setElText('productsSectionTitle', getSetting('products_section_title', 'المنتجات', 'Our Products'));
+  setElText('productsSectionSubtitle', getSetting('products_section_subtitle', 'استكشف باقتنا المتنوعة من الأعسال الطبيعية النادرة ومنتجات الخلية الملكية', 'Explore our diverse range of rare raw honeys and royal hive treasures'));
+
+  // About story
+  setElText('aboutHeroTitle', getSetting('about_hero_title', 'قصتنا في قطاف العسل', 'Our Story at Qetaf Honey'));
+  setElText('aboutHeroSubtitle', getSetting('about_hero_subtitle', 'رحلة من الشغف بنقاء الطبيعة، نعتني بالنحل لنمنحكم عسلاً كما أراده الخالق.', "A passionate journey to preserve nature's golden gift just as nature intended."));
+  setElText('aboutP1', getSetting('about_p1', 'في «قطاف العسل»، بدأنا رحلتنا من إيمان راسخ بأن العسل الطبيعي ليس مجرد غذاء بل هو شفاء وطاقة حيوية نقية. نختار مواقع مناحلنا بعناية في البيئات الجبلية والوديان والبراري المفتوحة بعيداً عن التلوث والمبيدات.', 'At Qetaf Honey, our passion was sparked by the understanding that pure raw honey is more than food—it is living wellness and holistic vitality. We locate our apiaries in untouched mountain valleys and wild botanical sanctuaries.'));
+  setElText('aboutP2', getSetting('about_p2', 'نلتزم بأعلى معايير فرز وتعبئة العسل دون تسخين أو فلترة مفرطة لنحافظ على كامل الإنزيمات الحية، الفيتامينات، وفوائد حبوب اللقاح الطبيعية، ليصلكم من المنحل إلى مائدتكم بكامل قيمته الغذائية.', 'We adhere to uncompromised harvesting standards without excessive filtration or heat damage, preserving living enzymes, natural antioxidants, and precious flower pollens directly to your home.'));
+
+  // Brand values
+  setElText('valuesSectionTitle', getSetting('values_section_title', 'قيمنا والتزامنا تجاهكم', 'Our Values & Commitment'));
+  setElText('valuesSectionSubtitle', getSetting('values_section_subtitle', 'المعايير التي نحرص عليها في كل قطرة عسل تصل إلى بيتك', 'The standards we uphold in every drop of honey delivered to your home'));
+  setElText('val1Title', getSetting('val_1_title', 'أمانة ومصداقية', 'Authentic Purity'));
+  setElText('val1Desc', getSetting('val_1_desc', 'نضمن نقاء كل قطرة عسل نقدمها، ونلتزم بالفحص الدوري بأدق المختبرات المتخصصة.', 'Every single drop is certified pure, supported by comprehensive laboratory testing.'));
+  setElText('val2Title', getSetting('val_2_title', 'إنتاج طبيعي مستدام', 'Sustainable Beekeeping'));
+  setElText('val2Desc', getSetting('val_2_desc', 'نتبع ممارسات تربية نحل رحيمة وصديقة للبيئة تضمن صحة النحل وتنوع المحاصيل.', 'We practice ethical, bee-first apiculture ensuring healthy colonies and thriving biodiversity.'));
+  setElText('val3Title', getSetting('val_3_title', 'تنوع وجودة استثنائية', 'Rare & Diverse Selection'));
+  setElText('val3Desc', getSetting('val_3_desc', 'نوفر لكم تشكيلة واسعة من أعسال السدر الجبلي والأعشاب الطبية ومنتجات الخلية الملكية.', 'Offering world-class mountain Sidr, herbal honeys, propolis, and fresh royal jelly blends.'));
+  setElText('val4Title', getSetting('val_4_title', 'ثقة ورضا عملائنا', 'Customer Trust & Satisfaction'));
+  setElText('val4Desc', getSetting('val_4_desc', 'آلاف العملاء يثقون في قطاف كمصدرهم المعتمد للعسل الطبيعي والمكملات الغذائية.', 'Thousands of families cherish Qetaf as their trusted natural wellness partner.'));
+
+  // FAQ
+  setElText('faqSectionTitle', getSetting('faq_section_title', 'الأسئلة الشائعة', 'Frequently Asked Questions'));
+  setElText('faq1Q', getSetting('faq_1_q', 'كيف أتأكد من أن عسل قطاف طبيعي 100%؟', 'How do I know Qetaf honey is 100% pure?'));
+  setElText('faq1A', getSetting('faq_1_a', 'جميع أعسالنا تخضع للفحص المخبري الدوري للتحقق من نسب السكروز والإنزيمات والنقاء التام. كما نقدم ضمان استرجاع كامل في حال ثبت عدم نقاء العسل.', 'Our honey undergoes stringent third-party laboratory analysis verifying sucrose levels, moisture, and active pollen count. We provide a full money-back guarantee.'));
+  setElText('faq2Q', getSetting('faq_2_q', 'هل العسل يتبلور؟ وهل التبلور دليل على الغش؟', 'Does raw honey crystallize? Is crystallization bad?'));
+  setElText('faq2A', getSetting('faq_2_a', 'على العكس تماماً! التبلور (التجمد) هو خاصية فيزيائية طبيعية تحدث لبعض أنواع العسل الخام غير المبستر مثل عسل الموالح والبرسيم، وهو أكبر دليل على أن العسل طبيعي وحي ولم يتعرض لحرارة عالية تتلف فوائده.', 'Not at all! Crystallization is a natural physical hallmark of unpasteurized, enzyme-rich raw honey. It confirms that the honey was never overheated or artificially processed.'));
+  setElText('faq3Q', getSetting('faq_3_q', 'ما هي مدة التوصيل وتكلفة الشحن؟', 'What are your delivery times and shipping costs?'));
+  setElText('faq3A', getSetting('faq_3_a', 'يستغرق التوصيل عادة من 24 إلى 48 ساعة داخل مدينة الشروق ومدينتي وبدر والمدن المحيطة. الشحن مجاني للطلبات التي تتجاوز 500 جنيه.', 'Orders in El Shorouk, Madinaty, Badr, and surrounding areas arrive within 24-48 hours. Free delivery applies on orders above 500 EGP.'));
+
+  // Footer
+  setElText('footerTagline', getSetting('tagline', 'نقاء الطبيعة.. من المناحل إلى مائدتكم مباشرة. أعسال طبيعية مفحوصة ومضمونة الجودة والنقاء 100%.', "Nature's Purest Harvest Straight to Your Table. 100% pure lab-tested honey."));
+  setElText('footerContactHeading', getSetting('footer_contact_heading', 'معلومات التواصل', 'Contact Info'));
+  setElText('footerLinksHeading', getSetting('footer_links_heading', 'روابط سريعة', 'Quick Links'));
+  setElText('footerGuaranteeTitle', getSetting('footer_guarantee_title', 'ضمان قطاف الذهبي', 'Qetaf Golden Guarantee'));
+  setElText('footerGuaranteeText', getSetting('footer_guarantee_text', 'نضمن لك نقاء منتجاتنا بنسبة 100%.. إن لم ينل العسل رضاك، يمكنك استرجاعه واسترداد قيمته كاملة بدون أي تعقيد.', '100% satisfaction guaranteed. If you are not delighted with your honey, return it for a complete hassle-free refund.'));
+  setElText('footerCopyright', getSetting('copyright_text', 'جميع الحقوق محفوظة © قطاف العسل', 'All Rights Reserved © Qetaf Honey'));
+
+  // Order Success Modal
+  setElText('orderSuccessTitle', getSetting('order_success_title', 'تم انشاء طلبك', 'Your Order Has Been Created'));
+  setElText('orderSuccessMessage', getSetting('order_success_subtitle', 'سيتم التواصل معك لتأكيد طلبك و البدء بعملية التوصيل', 'We will contact you to confirm your order and begin the delivery process'));
+}
+
 function renderAll() {
   renderAnnouncementBanner();
   renderHeroSlider();
@@ -283,6 +367,7 @@ function renderAll() {
   renderCheckoutSummary();
   renderFooter();
   renderDeliveryCoverageNotice();
+  renderDynamicSiteTexts();
   prefillCustomerForm();
 }
 
@@ -994,7 +1079,6 @@ function prefillCustomerForm() {
 
   setField('checkoutName', c.name);
   setField('checkoutPhone', c.phone);
-  setField('checkoutEmail', c.email);
   setField('checkoutCity', c.city);
   setField('checkoutStreet', c.street);
   setField('checkoutBuilding', c.building);
@@ -1040,13 +1124,12 @@ async function handleCheckoutSubmit(e) {
   // Get values
   const name = document.getElementById('checkoutName').value.trim();
   const phone = document.getElementById('checkoutPhone').value.trim();
-  const email = document.getElementById('checkoutEmail').value.trim();
   const city = document.getElementById('checkoutCity').value.trim();
   const street = document.getElementById('checkoutStreet').value.trim();
   const building = document.getElementById('checkoutBuilding').value.trim();
-  const apt = document.getElementById('checkoutApt').value.trim();
-  const landmark = document.getElementById('checkoutLandmark').value.trim();
-  const notes = document.getElementById('checkoutNotes').value.trim();
+  const apt = document.getElementById('checkoutApt') ? document.getElementById('checkoutApt').value.trim() : '';
+  const landmark = document.getElementById('checkoutLandmark') ? document.getElementById('checkoutLandmark').value.trim() : '';
+  const notes = document.getElementById('checkoutNotes') ? document.getElementById('checkoutNotes').value.trim() : '';
 
   // Basic validation for required fields
   if (!name || !phone || !city || !street || !building) {
@@ -1056,7 +1139,7 @@ async function handleCheckoutSubmit(e) {
 
   // 1. Save customer details to localStorage (PERSISTS)
   const customerData = {
-    name, phone, email, city, street, building, apt, landmark, notes
+    name, phone, city, street, building, apt, landmark, notes
   };
   state.customer = customerData;
   localStorage.setItem('qetaf_customer', JSON.stringify(customerData));
@@ -1090,11 +1173,12 @@ async function handleCheckoutSubmit(e) {
 
 /**
  * Static Site Email Dispatcher (EmailJS)
+ * Orders are sent directly to the store owner ONLY.
+ * The store owner then contacts the buyer directly on the phone number provided.
  */
 function sendOrderEmails(orderPayload) {
   const settings = state.storeData?.Settings || {};
   const serviceId = settings.emailjs_service_id?.value_ar || 'service_qetaf';
-  const buyerTemplate = settings.emailjs_template_buyer?.value_ar || 'template_buyer';
   const sellerTemplate = settings.emailjs_template_seller?.value_ar || 'template_seller';
   const publicKey = settings.emailjs_public_key?.value_ar || '';
   const sellerEmail = settings.email?.value_ar || 'info@qetafhoney.com';
@@ -1112,7 +1196,6 @@ function sendOrderEmails(orderPayload) {
     order_id: orderPayload.orderId,
     customer_name: orderPayload.customer.name,
     customer_phone: orderPayload.customer.phone,
-    customer_email: orderPayload.customer.email || 'لم يتم تقديمه',
     customer_address: fullAddress,
     order_notes: orderPayload.customer.notes || 'لا توجد ملاحظات',
     order_items: itemsText,
@@ -1123,20 +1206,10 @@ function sendOrderEmails(orderPayload) {
   if (typeof emailjs !== 'undefined' && publicKey && publicKey !== 'YOUR_PUBLIC_KEY') {
     emailjs.init(publicKey);
 
-    // Send email to store owner
+    // Send order notification email ONLY to store owner (Seller)
     emailjs.send(serviceId, sellerTemplate, templateParams)
-      .then(res => console.log('Email to seller sent:', res))
-      .catch(err => console.warn('Email to seller failed:', err));
-
-    // Send email to buyer if email was provided
-    if (orderPayload.customer.email) {
-      emailjs.send(serviceId, buyerTemplate, {
-        ...templateParams,
-        to_email: orderPayload.customer.email
-      })
-      .then(res => console.log('Email to buyer sent:', res))
-      .catch(err => console.warn('Email to buyer failed:', err));
-    }
+      .then(res => console.log('Order notification email sent to seller:', res))
+      .catch(err => console.warn('Order notification email to seller failed:', err));
   } else {
     console.info('EmailJS credentials are in setup/demo mode. See README.md to activate live EmailJS keys in Settings sheet.');
   }
@@ -1147,32 +1220,18 @@ function sendOrderEmails(orderPayload) {
  */
 function showOrderSuccessModal(orderId, customer, items, total) {
   const modal = document.getElementById('orderSuccessModal');
+  const titleEl = document.getElementById('orderSuccessTitle');
   const msgEl = document.getElementById('orderSuccessMessage');
   const idEl = document.getElementById('orderSuccessId');
-  const whatsappBtn = document.getElementById('orderSuccessWhatsAppBtn');
 
   if (idEl) idEl.textContent = `#${orderId}`;
 
-  // Message condition:
-  // "if he does provide an email we show a success message (Order Complete, we will contact you soon)."
-  if (msgEl) {
-    if (customer.email) {
-      msgEl.textContent = i18n[state.lang].order_success_msg_with_email;
-    } else {
-      msgEl.textContent = i18n[state.lang].order_success_msg_no_email;
-    }
+  if (titleEl) {
+    titleEl.textContent = getSetting('order_success_title', 'تم انشاء طلبك', 'Your Order Has Been Created');
   }
 
-  // Pre-fill WhatsApp link
-  if (whatsappBtn) {
-    const settings = state.storeData?.Settings || {};
-    const whatsappNum = settings.whatsapp?.value_ar || '201001234567';
-    const itemsList = items.map(i => `${i.product.name_ar} (${i.qty})`).join(', ');
-    const address = `${customer.city} - ${customer.street} ${customer.building}`;
-    const text = encodeURIComponent(
-      `مرحباً قطاف العسل 🍯\nأرغب في تأكيد طلبي رقم #${orderId}\nالاسم: ${customer.name}\nالهاتف: ${customer.phone}\nالعنوان: ${address}\nالمنتجات: ${itemsList}\nالإجمالي: ${total} ج.م`
-    );
-    whatsappBtn.href = `https://wa.me/${whatsappNum}?text=${text}`;
+  if (msgEl) {
+    msgEl.textContent = getSetting('order_success_subtitle', 'سيتم التواصل معك لتأكيد طلبك و البدء بعملية التوصيل', 'We will contact you to confirm your order and begin the delivery process');
   }
 
   if (modal) modal.classList.add('open');
