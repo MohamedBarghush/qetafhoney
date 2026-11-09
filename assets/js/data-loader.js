@@ -262,8 +262,8 @@ const DataLoader = (() => {
             "description": "WhatsApp number without + or spaces for direct chat/ordering"
       },
       "email": {
-            "value_ar": "",
-            "value_en": "",
+            "value_ar": "qetafhoneyeg@gmail.com",
+            "value_en": "qetafhoneyeg@gmail.com",
             "description": "Store owner email address for orders and inquiries"
       },
       "address": {
@@ -451,20 +451,10 @@ const DataLoader = (() => {
             "value_en": "All Rights Reserved © Qetaf Honey",
             "description": "نص حقوق الملكية أسفل الموقع"
       },
-      "emailjs_service_id": {
-            "value_ar": "service_qetaf",
-            "value_en": "service_qetaf",
-            "description": "EmailJS Service ID (optional, see instructions)"
-      },
-      "emailjs_template_seller": {
-            "value_ar": "template_seller_order",
-            "value_en": "template_seller_order",
-            "description": "EmailJS Store Owner Notification Template ID"
-      },
-      "emailjs_public_key": {
-            "value_ar": "YOUR_PUBLIC_KEY",
-            "value_en": "YOUR_PUBLIC_KEY",
-            "description": "EmailJS Public Key"
+      "google_script_url": {
+            "value_ar": "https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec",
+            "value_en": "https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec",
+            "description": "Google Apps Script Web App URL for orders logging and email notification"
       },
       "about_image_path": {
             "value_ar": "assets/images/about/about.jpg",

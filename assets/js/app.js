@@ -1191,8 +1191,8 @@ async function handleCheckoutSubmit(e) {
   // Close checkout modal
   closeCheckoutModal();
 
-  // 3. Attempt EmailJS notification
-  sendOrderEmails({
+  // 3. Send order notification to Google Apps Script (Saves in Google Sheets & sends email)
+  sendOrderNotification({
     orderId,
     customer: customerData,
     items: orderCart,
@@ -1205,46 +1205,55 @@ async function handleCheckoutSubmit(e) {
 }
 
 /**
- * Static Site Email Dispatcher (EmailJS)
- * Orders are sent directly to the store owner ONLY.
- * The store owner then contacts the buyer directly on the phone number provided.
+ * Google Apps Script Order Dispatcher
+ * Sends complete order data to the Google Apps Script Web App:
+ * 1. Automatically appends a new row in Google Sheets (الطلبات).
+ * 2. Sends an email notification to qetafhoneyeg@gmail.com with complete customer data.
  */
-function sendOrderEmails(orderPayload) {
+function sendOrderNotification(orderPayload) {
   const settings = state.storeData?.Settings || {};
-  const serviceId = settings.emailjs_service_id?.value_ar || 'service_qetaf';
-  const sellerTemplate = settings.emailjs_template_seller?.value_ar || 'template_seller';
-  const publicKey = settings.emailjs_public_key?.value_ar || '';
-  const sellerEmail = settings.email?.value_ar || 'info@qetafhoney.com';
+  const scriptUrl = settings.google_script_url?.value_ar || settings.google_script_url?.value_en || '';
 
-  // Format order items for email body
-  const itemsText = orderPayload.items.map(i => 
-    `- ${i.product.name_ar} (${i.product.name_en}) × ${i.qty} = ${i.product.final_price * i.qty} ${orderPayload.currency}`
-  ).join('\n');
-
-  const fullAddress = `${orderPayload.customer.city} - شارع ${orderPayload.customer.street} - مبنى ${orderPayload.customer.building}` +
-    (orderPayload.customer.apt ? ` - شقة ${orderPayload.customer.apt}` : '') +
-    (orderPayload.customer.landmark ? ` (علامة مميزة: ${orderPayload.customer.landmark})` : '');
-
-  const templateParams = {
-    order_id: orderPayload.orderId,
-    customer_name: orderPayload.customer.name,
-    customer_phone: orderPayload.customer.phone,
-    customer_address: fullAddress,
-    order_notes: orderPayload.customer.notes || 'لا توجد ملاحظات',
-    order_items: itemsText,
-    total_amount: `${orderPayload.total} ${orderPayload.currency}`,
-    seller_email: sellerEmail
+  // Prepare structured payload for Google Apps Script
+  const payload = {
+    orderId: orderPayload.orderId,
+    createdAt: new Date().toLocaleString('ar-EG', { timeZone: 'Africa/Cairo' }),
+    customer: orderPayload.customer,
+    items: orderPayload.items.map(item => ({
+      name_ar: item.product.name_ar,
+      name_en: item.product.name_en || '',
+      qty: item.qty,
+      price: item.product.final_price,
+      total: item.product.final_price * item.qty
+    })),
+    totalPrice: orderPayload.total,
+    currency: orderPayload.currency
   };
 
-  if (typeof emailjs !== 'undefined' && publicKey && publicKey !== 'YOUR_PUBLIC_KEY') {
-    emailjs.init(publicKey);
+  const isConfigured = scriptUrl && 
+                       scriptUrl.trim() !== '' && 
+                       !scriptUrl.includes('YOUR_DEPLOYMENT_ID') &&
+                       scriptUrl.startsWith('https://script.google.com/');
 
-    // Send order notification email ONLY to store owner (Seller)
-    emailjs.send(serviceId, sellerTemplate, templateParams)
-      .then(res => console.log('Order notification email sent to seller:', res))
-      .catch(err => console.warn('Order notification email to seller failed:', err));
+  if (isConfigured) {
+    // Dispatch to Google Apps Script Web App
+    // mode: 'no-cors' with 'text/plain' ensures zero CORS blocking on GitHub Pages
+    fetch(scriptUrl.trim(), {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {
+        'Content-Type': 'text/plain;charset=utf-8'
+      },
+      body: JSON.stringify(payload)
+    })
+    .then(() => {
+      console.log('Order notification dispatched to Google Apps Script:', orderPayload.orderId);
+    })
+    .catch(err => {
+      console.warn('Google Apps Script dispatch error:', err);
+    });
   } else {
-    console.info('EmailJS credentials are in setup/demo mode. See README.md to activate live EmailJS keys in Settings sheet.');
+    console.info('Google Apps Script URL is not set yet or is in placeholder mode. Update google_script_url in products.xlsx Settings sheet.');
   }
 }
 

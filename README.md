@@ -34,7 +34,7 @@ A modern, fast, and fully responsive e-commerce web application for 100% pure ra
   - Cart persists across reloads and visits.
   - Customer details (Name, Phone, City / Area, Street, Building, Apt, Landmark, Notes) are cached in `localStorage`.
   - Configurable delivery coverage notice (editable directly via Excel Settings sheet).
-  - No customer email or WhatsApp spam: the store owner receives an email notification with full order details, and contacts the customer directly by phone.
+  - Automated Order Processing with Google Sheets & Apps Script: orders are immediately logged to Google Sheets and emailed to qetafhoneyeg@gmail.com with one-click WhatsApp/Call buttons. The store owner contacts the customer directly by phone.
   - **Upon checkout completion, the cart is cleared while customer details remain saved** for friction-free future orders.
   - Order success modal displays:
     - **"تم انشاء طلبك"** ("Your Order Has Been Created")
