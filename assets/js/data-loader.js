@@ -237,7 +237,7 @@ const DataLoader = (() => {
     ],
     Settings: {
       "announcement_text": {
-            "value_ar": "الحق عروض الجمعة البيضاء. خصم 25% على جميع المنتجات",
+            "value_ar": "الحق عروض الجمعة البيضاء. خصومات على جميع المنتجات تصل الى 25%",
             "value_en": "White Friday Sale. 25% off all products",
             "description": "Banner text at top of site. Leave empty if you don't want to display it."
       },
@@ -252,18 +252,18 @@ const DataLoader = (() => {
             "description": "Store tagline"
       },
       "phone": {
-            "value_ar": "+20 100 123 4567",
-            "value_en": "+20 100 123 4567",
+            "value_ar": "",
+            "value_en": "",
             "description": "Contact phone number"
       },
       "whatsapp": {
-            "value_ar": "201001234567",
-            "value_en": "201001234567",
+            "value_ar": "",
+            "value_en": "",
             "description": "WhatsApp number without + or spaces for direct chat/ordering"
       },
       "email": {
-            "value_ar": "info@qetafhoney.com",
-            "value_en": "info@qetafhoney.com",
+            "value_ar": "",
+            "value_en": "",
             "description": "Store owner email address for orders and inquiries"
       },
       "address": {
@@ -277,18 +277,18 @@ const DataLoader = (() => {
             "description": "Working hours"
       },
       "facebook_url": {
-            "value_ar": "https://facebook.com/qetafhoney",
-            "value_en": "https://facebook.com/qetafhoney",
+            "value_ar": "https://facebook.com/qetaf.honey",
+            "value_en": "https://facebook.com/qetaf.honey",
             "description": "Facebook page URL"
       },
       "instagram_url": {
-            "value_ar": "https://instagram.com/qetafhoney",
-            "value_en": "https://instagram.com/qetafhoney",
+            "value_ar": "",
+            "value_en": "",
             "description": "Instagram page URL"
       },
       "delivery_coverage_notice": {
-            "value_ar": "التوصيل حاليا متاح فقط في مدينة الشروق و مدينتي و بدر و المدن المحيطة",
-            "value_en": "Delivery is currently available only in El Shorouk, Madinaty, Badr, and surrounding areas",
+            "value_ar": "التوصيل حاليا متاح فقط في مدينة الشروق ومدينتي والرحاب وبدر والعبور والمدن المحيطة",
+            "value_en": "Delivery is currently available only in El Shorouk, Madinaty, Rehab CIty, Badr, Obour city, and surrounding areas",
             "description": "تنبيه نطاق التوصيل في صفحة إتمام الطلب"
       },
       "order_success_title": {
@@ -307,8 +307,8 @@ const DataLoader = (() => {
             "description": "عنوان قسم العروض في الصفحة الرئيسية"
       },
       "offers_section_subtitle": {
-            "value_ar": "تشكيلة من أفضل العروض الحصرية وباقات التوفير العائلية",
-            "value_en": "A curated selection of exclusive offers & family value bundles",
+            "value_ar": "تشكيلة من أفضل العروض الحصرية",
+            "value_en": "A curated selection of exclusive offers",
             "description": "النص الوصفي تحت عنوان قسم العروض"
       },
       "products_section_title": {
@@ -318,22 +318,22 @@ const DataLoader = (() => {
       },
       "products_section_subtitle": {
             "value_ar": "استكشف باقتنا المتنوعة من الأعسال الطبيعية النادرة ومنتجات الخلية الملكية",
-            "value_en": "Explore our diverse range of rare raw honeys and royal hive treasures",
+            "value_en": "Explore our diverse range of raw honeys and royal hive treasures",
             "description": "النص الوصفي تحت عنوان قسم المنتجات"
       },
       "about_hero_title": {
-            "value_ar": "قصتنا في قطاف العسل",
+            "value_ar": "قصتنا في عسل قطاف",
             "value_en": "Our Story at Qetaf Honey",
             "description": "عنوان صفحة من نحن"
       },
       "about_hero_subtitle": {
-            "value_ar": "رحلة من الشغف بنقاء الطبيعة، نعتني بالنحل لنمنحكم عسلاً كما أراده الخالق.",
-            "value_en": "A passionate journey to preserve nature's golden gift just as nature intended.",
+            "value_ar": "رحلة من الشغف بنقاء الطبيعة.",
+            "value_en": "A passionate journey to preserve nature's golden gift.",
             "description": "الوصف التمهيدي لصفحة من نحن"
       },
       "about_p1": {
-            "value_ar": "في «قطاف العسل»، بدأنا رحلتنا من إيمان راسخ بأن العسل الطبيعي ليس مجرد غذاء بل هو شفاء وطاقة حيوية نقية. نختار مواقع مناحلنا بعناية في البيئات الجبلية والوديان والبراري المفتوحة بعيداً عن التلوث والمبيدات.",
-            "value_en": "At Qetaf Honey, our passion was sparked by the understanding that pure raw honey is more than food—it is living wellness and holistic vitality. We locate our apiaries in untouched mountain valleys and wild botanical sanctuaries.",
+            "value_ar": "في قطاف، بدأنا رحلتنا من إيمان راسخ بأن العسل الطبيعي ليس مجرد غذاء بل هو شفاء وطاقة حيوية نقية.",
+            "value_en": "At Qetaf Honey, our passion was sparked by the understanding that pure raw honey is more than food—it is living wellness and holistic vitality.",
             "description": "الفقرة الأولى في قصة من نحن"
       },
       "about_p2": {
@@ -357,8 +357,8 @@ const DataLoader = (() => {
             "description": "عنوان القيمة 1"
       },
       "val_1_desc": {
-            "value_ar": "نضمن نقاء كل قطرة عسل نقدمها، ونلتزم بالفحص الدوري بأدق المختبرات المتخصصة.",
-            "value_en": "Every single drop is certified pure, supported by comprehensive laboratory testing.",
+            "value_ar": "نضمن نقاء كل قطرة عسل نقدمها.",
+            "value_en": "Every single drop is certified pure.",
             "description": "وصف القيمة 1"
       },
       "val_2_title": {
@@ -377,8 +377,8 @@ const DataLoader = (() => {
             "description": "عنوان القيمة 3"
       },
       "val_3_desc": {
-            "value_ar": "نوفر لكم تشكيلة واسعة من أعسال السدر الجبلي والأعشاب الطبية ومنتجات الخلية الملكية.",
-            "value_en": "Offering world-class mountain Sidr, herbal honeys, propolis, and fresh royal jelly blends.",
+            "value_ar": "نوفر لكم تشكيلة واسعة من الأعسال ومنتجات الخلية الملكية.",
+            "value_en": "We offer a wide selection of premium honey and royal bee products.",
             "description": "وصف القيمة 3"
       },
       "val_4_title": {
@@ -387,8 +387,8 @@ const DataLoader = (() => {
             "description": "عنوان القيمة 4"
       },
       "val_4_desc": {
-            "value_ar": "آلاف العملاء يثقون في قطاف كمصدرهم المعتمد للعسل الطبيعي والمكملات الغذائية.",
-            "value_en": "Thousands of families cherish Qetaf as their trusted natural wellness partner.",
+            "value_ar": "مئات العملاء يثقون في قطاف كمصدرهم المعتمد للعسل الطبيعي.",
+            "value_en": "Hundreds of families cherish Qetaf as their trusted natural wellness partner.",
             "description": "وصف القيمة 4"
       },
       "faq_section_title": {
@@ -397,13 +397,13 @@ const DataLoader = (() => {
             "description": "عنوان قسم الأسئلة الشائعة"
       },
       "faq_1_q": {
-            "value_ar": "كيف أتأكد من أن عسل قطاف طبيعي 100%؟",
-            "value_en": "How do I know Qetaf honey is 100% pure?",
+            "value_ar": "ما هو ضمان قطاف الذهبي؟",
+            "value_en": "What is Qetaf Golden Guarantee?",
             "description": "السؤال الشائع 1"
       },
       "faq_1_a": {
-            "value_ar": "جميع أعسالنا تخضع للفحص المخبري الدوري للتحقق من نسب السكروز والإنزيمات والنقاء التام. كما نقدم ضمان استرجاع كامل في حال ثبت عدم نقاء العسل.",
-            "value_en": "Our honey undergoes stringent third-party laboratory analysis verifying sucrose levels, moisture, and active pollen count. We provide a full money-back guarantee.",
+            "value_ar": "ضمان قطاف الذهبي يضمن لك جودة و نقاء العسل المقدم اليك. في حالة عدم رضاك عن العسل نقوم بإسترجاعه و ارجاع كامل المبلغ لك.",
+            "value_en": "Qitaf Golden Guarantee promises you 100% pure and premium quality honey. Not satisfied? Return it and get your money back in full.",
             "description": "إجابة السؤال 1"
       },
       "faq_2_q": {
@@ -422,8 +422,8 @@ const DataLoader = (() => {
             "description": "السؤال الشائع 3"
       },
       "faq_3_a": {
-            "value_ar": "يستغرق التوصيل عادة من 24 إلى 48 ساعة داخل مدينة الشروق ومدينتي وبدر والمدن المحيطة. الشحن مجاني للطلبات التي تتجاوز 500 جنيه.",
-            "value_en": "Orders in El Shorouk, Madinaty, Badr, and surrounding areas arrive within 24-48 hours. Free delivery applies on orders above 500 EGP.",
+            "value_ar": "يستغرق التوصيل عادة من 48 إلى 72 ساعة داخل مدينة الشروق ومدينتي والرحاب وبدر ومدينة العبور والمدن المحيطة. و يتم حساب تكلفة الشحن حسب الموقع او يكون التوصيل مجاناً في بعض العروض.",
+            "value_en": "Orders in El Shorouk, Madinaty, Rehab City, Badr, Obour City, and surrounding areas arrive within 48-72 hours. Shipping cost is calculated based on location or you get free shipping offers if available.",
             "description": "إجابة السؤال 3"
       },
       "footer_contact_heading": {
@@ -447,7 +447,7 @@ const DataLoader = (() => {
             "description": "نص الضمان في الفوتر"
       },
       "copyright_text": {
-            "value_ar": "جميع الحقوق محفوظة © قطاف العسل",
+            "value_ar": "جميع الحقوق محفوظة © عسل قطاف",
             "value_en": "All Rights Reserved © Qetaf Honey",
             "description": "نص حقوق الملكية أسفل الموقع"
       },
@@ -465,8 +465,18 @@ const DataLoader = (() => {
             "value_ar": "YOUR_PUBLIC_KEY",
             "value_en": "YOUR_PUBLIC_KEY",
             "description": "EmailJS Public Key"
+      },
+      "about_image_path": {
+            "value_ar": "assets/images/about/about.jpg",
+            "value_en": "assets/images/about/about.jpg",
+            "description": "مسار صورة صفحة من نحن (مثال: assets/images/about/about.jpg)"
+      },
+      "footer_connect_heading": {
+            "value_ar": "تواصل معنا",
+            "value_en": "Connect With Us",
+            "description": "عنوان قسم التواصل وروابط التواصل في الفوتر"
       }
-}
+    }
   };
 
   /**
@@ -474,7 +484,13 @@ const DataLoader = (() => {
    */
   function sheetToObjects(sheet) {
     if (!sheet) return [];
-    return XLSX.utils.sheet_to_json(sheet, { defval: "" });
+    const rows = XLSX.utils.sheet_to_json(sheet, { defval: "" });
+    return rows.filter(r => {
+      const id = String(r.id || '').trim();
+      const title = String(r.title_ar || r.name_ar || '').trim();
+      const key = String(r.key || '').trim();
+      return id.length > 0 || title.length > 0 || key.length > 0;
+    });
   }
 
   /**
@@ -485,8 +501,9 @@ const DataLoader = (() => {
     const rows = XLSX.utils.sheet_to_json(sheet, { defval: "" });
     const settings = {};
     rows.forEach(r => {
-      if (r.key) {
-        settings[r.key] = {
+      const k = String(r.key || '').trim();
+      if (k.length > 0) {
+        settings[k] = {
           value_ar: String(r.value_ar !== undefined ? r.value_ar : "").trim(),
           value_en: String(r.value_en !== undefined ? r.value_en : "").trim(),
           description: String(r.description || "").trim()

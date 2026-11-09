@@ -47,6 +47,10 @@ qetafhoney/
 │       ├── logo/
 │       │   ├── logo.svg           # الشعار بصيغة فيكتور عالية النقاء
 │       │   └── logo.png           # الشعار بصيغة PNG شفافة
+│       ├── about/
+│       │   └── about.jpg          # صورة صفحة من نحن المستقلة
+│       ├── about/
+│       │   └── about.jpg          # صورة صفحة من نحن المستقلة
 │       ├── landing/
 │       │   ├── hero/              # صور بطاقات العروض الرئيسية المنزلقة (Hero Slider)
 │       │   │   ├── hero1.jpg
@@ -82,6 +86,8 @@ qetafhoney/
 | **سلايدر العروض الرئيسي (Hero Slider)** | `assets/images/landing/hero/` | **16 : 9 (أفقي)** | **1376 × 768 بكسل** | JPG أو WebP (أقل من 300KB) |
 | **بطاقات العروض الصغيرة (Small Cards)** | `assets/images/landing/offers/` | **4 : 3** | **800 × 600 بكسل** | JPG أو WebP (أقل من 200KB) |
 | **صور المنتجات (Product Cards)** | `assets/images/products/{اسم-المنتج}/` | **1 : 1 (مربعة)** | **800 × 800 بكسل** (أو 1000 × 1000) | JPG أو WebP (أقل من 200KB) |
+| **صورة صفحة من نحن (About Us)** | `assets/images/about/about.jpg` | **3 : 2** أو **4 : 3** | **1200 × 800 بكسل** | JPG أو WebP (أقل من 250KB) |
+| **صورة صفحة من نحن (About Us)** | `assets/images/about/about.jpg` | **3 : 2** أو **4 : 3** | **1200 × 800 بكسل** | JPG أو WebP (أقل من 250KB) |
 
 > [!TIP]
 > **نصيحة هامة:** احرص على ضغط الصور قبل رفعها باستخدام أدوات مجانية مثل [TinyPNG](https://tinypng.com) لضمان سرعة تحميل فائقة على هواتف العملاء وباقات الإنترنت.
@@ -165,7 +171,8 @@ qetafhoney/
 | `whatsapp` | رقم الواتساب بدون + أو مسافات (مثال: `201001234567`). |
 | `email` | البريد الإلكتروني للمتجر (الذي ستستلم عليه إشعارات الطلبات). |
 | `address` | العنوان ومناطق التغطية. |
-| `footer_contact_heading` | عنوان عمود "معلومات التواصل" في الفوتر. |
+| `footer_connect_heading` | عنوان عمود "تواصل معنا" وروابط التواصل في الفوتر. |
+| `about_image_path` | مسار صورة صفحة من نحن (افتراضياً: `assets/images/about/about.jpg`). |
 | `footer_links_heading` | عنوان عمود "روابط سريعة" في الفوتر. |
 | `footer_guarantee_title` | عنوان الضمان في الفوتر: *"ضمان قطاف الذهبي"*. |
 | `footer_guarantee_text` | نص الضمان في الفوتر. |

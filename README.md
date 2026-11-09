@@ -56,6 +56,7 @@ To ensure the website displays crisp visuals with fast load times, adhere to the
 | **Hero Slider Banners** | `assets/images/landing/hero/` | **16 : 9 (Horizontal)** | **1376 × 768 px** | JPG / WebP (< 250 KB) |
 | **Small Offer Cards** | `assets/images/landing/offers/` | **4 : 3** | **800 × 600 px** | JPG / WebP (< 180 KB) |
 | **Product Images** | `assets/images/products/{product-slug}/` | **1 : 1 (Square)** | **800 × 800 px** (or 1000 × 1000 px) | JPG / WebP (< 200 KB) |
+| **About Us Hero Image** | `assets/images/about/about.jpg` | **3 : 2** or **4 : 3** | **1200 × 800 px** | JPG / WebP (< 250 KB) |
 
 ---
 
@@ -81,6 +82,8 @@ qetafhoney/
 │   │   └── xlsx.full.min.js     # SheetJS distribution library
 │   └── images/
 │       ├── logo/                # Logo assets (logo.svg, logo.png)
+│       ├── about/
+│       │   └── about.jpg        # Independent About Us story image
 │       ├── landing/
 │       │   ├── hero/            # Hero carousel banner images
 │       │   └── offers/          # Smaller offer card images

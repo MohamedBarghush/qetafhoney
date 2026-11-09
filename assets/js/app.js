@@ -109,6 +109,9 @@ const i18n = {
     faq_3_a: "يستغرق التوصيل عادة من 24 إلى 48 ساعة داخل مدينة الشروق ومدينتي وبدر والمدن المحيطة. الشحن مجاني للطلبات التي تتجاوز 500 جنيه.",
     
     footer_quick_links: "روابط سريعة",
+    footer_connect_with_us: "تواصل معنا",
+    footer_connect_sub: "تابعنا وتواصل معنا مباشرة عبر المنصات التالية:",
+
     footer_contact_info: "معلومات التواصل",
     footer_guarantee: "ضمان قطاف الذهبي",
     footer_guarantee_text: "نضمن لك نقاء منتجاتنا بنسبة 100%.. إن لم ينل العسل رضاك، يمكنك استرجاعه واسترداد قيمته كاملة.",
@@ -201,6 +204,9 @@ const i18n = {
     faq_3_a: "Orders in El Shorouk, Madinaty, Badr, and surrounding areas arrive within 24-48 hours. Free delivery applies on orders above 500 EGP.",
     
     footer_quick_links: "Quick Links",
+    footer_connect_with_us: "Connect With Us",
+    footer_connect_sub: "Follow and reach out to us directly via:",
+
     footer_contact_info: "Contact Info",
     footer_guarantee: "Qetaf Golden Guarantee",
     footer_guarantee_text: "100% satisfaction guaranteed. If you are not delighted with your honey, return it for a complete hassle-free refund.",
@@ -344,6 +350,18 @@ function renderDynamicSiteTexts() {
   setElText('faq3Q', getSetting('faq_3_q', 'ما هي مدة التوصيل وتكلفة الشحن؟', 'What are your delivery times and shipping costs?'));
   setElText('faq3A', getSetting('faq_3_a', 'يستغرق التوصيل عادة من 24 إلى 48 ساعة داخل مدينة الشروق ومدينتي وبدر والمدن المحيطة. الشحن مجاني للطلبات التي تتجاوز 500 جنيه.', 'Orders in El Shorouk, Madinaty, Badr, and surrounding areas arrive within 24-48 hours. Free delivery applies on orders above 500 EGP.'));
 
+  // About Us Image (dynamically loaded from Settings)
+  const aboutImgEl = document.getElementById('aboutHeroImg');
+  if (aboutImgEl) {
+    const aboutPath = getSetting('about_image_path', 'assets/images/about/about.jpg', 'assets/images/about/about.jpg');
+    if (aboutPath && aboutPath.trim()) {
+      aboutImgEl.src = aboutPath.trim();
+    }
+  }
+
+  // Footer Social Connect Heading
+  setElText('footerSocialHeading', getSetting('footer_connect_heading', 'تواصل معنا', 'Connect With Us'));
+
   // Footer
   setElText('footerTagline', getSetting('tagline', 'نقاء الطبيعة.. من المناحل إلى مائدتكم مباشرة. أعسال طبيعية مفحوصة ومضمونة الجودة والنقاء 100%.', "Nature's Purest Harvest Straight to Your Table. 100% pure lab-tested honey."));
   setElText('footerContactHeading', getSetting('footer_contact_heading', 'معلومات التواصل', 'Contact Info'));
@@ -400,7 +418,12 @@ function renderHeroSlider() {
   const dotsContainer = document.getElementById('heroDots');
   if (!track || !state.storeData) return;
 
-  const offers = (state.storeData.HeroOffers || []).filter(o => String(o.active).toLowerCase() !== 'no');
+  const offers = (state.storeData.HeroOffers || []).filter(o => {
+    const isActive = String(o.active || "").toLowerCase() !== 'no';
+    const hasImage = Boolean(o.image_path && String(o.image_path).trim().length > 0);
+    const hasText = Boolean((o.title_ar && String(o.title_ar).trim().length > 0) || (o.title_en && String(o.title_en).trim().length > 0));
+    return isActive && (hasImage || hasText);
+  });
   if (offers.length === 0) return;
 
   // Build slides
@@ -431,7 +454,7 @@ function renderHeroSlider() {
         ` : ''}
         <div class="slide-image-wrapper">
           <a href="${link}" onclick="handleOfferLink('${link}')" style="display: block; width: 100%;">
-            <img src="${img}" alt="${title || 'عرض قطاف'}" class="slide-image" loading="lazy" onerror="this.src='assets/images/landing/hero/hero1.jpg'">
+            <img src="${img}" alt="${title || 'عرض قطاف'}" class="slide-image" onerror="this.onerror=null; this.src='assets/images/landing/hero/hero1.jpg'">
           </a>
         </div>
       </div>
@@ -508,7 +531,11 @@ function renderSmallOffers() {
   const container = document.getElementById('smallOffersGrid');
   if (!container || !state.storeData) return;
 
-  const smallOffers = (state.storeData.SmallOffers || []).filter(o => String(o.active).toLowerCase() !== 'no');
+  const smallOffers = (state.storeData.SmallOffers || []).filter(o => {
+    const isActive = String(o.active || "").toLowerCase() !== 'no';
+    const hasKey = Boolean(o.id || o.image_path || o.title_ar || o.title_en);
+    return isActive && hasKey;
+  });
   if (smallOffers.length === 0) return;
 
   container.innerHTML = smallOffers.map((card, idx) => {
@@ -523,7 +550,7 @@ function renderSmallOffers() {
     return `
       <div class="small-offer-card ${isFirstCard ? 'card-all-products' : ''}">
         <div class="card-img-wrapper">
-          <img src="${img}" alt="${title}" class="card-offer-img" loading="lazy" onerror="this.src='assets/images/landing/offers/offer1.jpg'">
+          <img src="${img}" alt="${title}" class="card-offer-img" onerror="this.onerror=null; this.src='assets/images/landing/offers/offer1.jpg'">
           ${badge ? `<div class="card-badge-tag">${badge}</div>` : ''}
         </div>
         <div class="small-offer-body">
@@ -1254,26 +1281,13 @@ function closeSuccessModal() {
  */
 function renderFooter() {
   const settings = state.storeData?.Settings || {};
-
-  const phone = settings.phone?.value_ar || '+20 100 123 4567';
   const whatsapp = settings.whatsapp?.value_ar || '201001234567';
-  const email = settings.email?.value_ar || 'info@qetafhoney.com';
-  const address = state.lang === 'ar' ? (settings.address?.value_ar || 'جمهورية مصر العربية') : (settings.address?.value_en || 'Egypt');
   const fbUrl = settings.facebook_url?.value_ar || '#';
-  const igUrl = settings.instagram_url?.value_ar || '#';
 
-  const phoneEl = document.getElementById('footerPhone');
-  const emailEl = document.getElementById('footerEmail');
-  const addressEl = document.getElementById('footerAddress');
   const fbEl = document.getElementById('footerFb');
-  const igEl = document.getElementById('footerIg');
   const waEl = document.getElementById('footerWa');
 
-  if (phoneEl) phoneEl.textContent = phone;
-  if (emailEl) emailEl.textContent = email;
-  if (addressEl) addressEl.textContent = address;
   if (fbEl) fbEl.href = fbUrl;
-  if (igEl) igEl.href = igUrl;
   if (waEl) waEl.href = `https://wa.me/${whatsapp}`;
 }
 
