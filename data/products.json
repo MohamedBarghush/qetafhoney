@@ -4,8 +4,8 @@
       "id": "P001",
       "name_ar": "عسل نوارة البرسيم 950جم",
       "name_en": "Clover Honey 950g",
-      "price": 250,
-      "discount_percent": 25,
+      "price": 250.0,
+      "discount_percent": 25.0,
       "stock_status": "In Stock",
       "image_paths": "assets/images/products/clover-honey 950g/1.jpg",
       "category_ar": "عسل زهور",
@@ -19,8 +19,8 @@
       "id": "P002",
       "name_ar": "عسل نوارة البرسيم 450جم",
       "name_en": "Clover Honey 450g",
-      "price": 125,
-      "discount_percent": 25,
+      "price": 125.0,
+      "discount_percent": 25.0,
       "stock_status": "In Stock",
       "image_paths": "assets/images/products/clover-honey 450g/1.jpg",
       "category_ar": "عسل زهور",
@@ -34,8 +34,8 @@
       "id": "P003",
       "name_ar": "عسل الموالح 950جم",
       "name_en": "Citrus Blossom Honey 950g",
-      "price": 320,
-      "discount_percent": 25,
+      "price": 320.0,
+      "discount_percent": 25.0,
       "stock_status": "In Stock",
       "image_paths": "assets/images/products/citrus-blossom 950g/1.jpg",
       "category_ar": "عسل زهور",
@@ -49,8 +49,8 @@
       "id": "P004",
       "name_ar": "عسل الموالح 450جم",
       "name_en": "Citrus Blossom Honey 450g",
-      "price": 160,
-      "discount_percent": 25,
+      "price": 160.0,
+      "discount_percent": 25.0,
       "stock_status": "In Stock",
       "image_paths": "assets/images/products/citrus-blossom 450g/1.jpg",
       "category_ar": "عسل زهور",
@@ -64,8 +64,8 @@
       "id": "P005",
       "name_ar": "عسل حبة البركة 950جم",
       "name_en": "Black-Seed Honey 950g",
-      "price": 320,
-      "discount_percent": 25,
+      "price": 320.0,
+      "discount_percent": 25.0,
       "stock_status": "In Stock",
       "image_paths": "assets/images/products/black-seed 950g/1.jpg",
       "category_ar": "عسل أعشاب",
@@ -79,8 +79,8 @@
       "id": "P006",
       "name_ar": "عسل حبة البركة 450جم",
       "name_en": "Black-Seed Honey 450g",
-      "price": 160,
-      "discount_percent": 25,
+      "price": 160.0,
+      "discount_percent": 25.0,
       "stock_status": "In Stock",
       "image_paths": "assets/images/products/black-seed 450g/1.jpg",
       "category_ar": "عسل أعشاب",
@@ -94,8 +94,8 @@
       "id": "P007",
       "name_ar": "عسل البردقوش 950جم",
       "name_en": "Margoram Honey 950g",
-      "price": 350,
-      "discount_percent": 25,
+      "price": 350.0,
+      "discount_percent": 25.0,
       "stock_status": "Out of Stock",
       "image_paths": "assets/images/products/marjoram-honey 950g/1.jpg",
       "category_ar": "عسل زهور",
@@ -109,8 +109,8 @@
       "id": "P008",
       "name_ar": "عسل البردقوش 450جم",
       "name_en": "Margoram Honey 450g",
-      "price": 175,
-      "discount_percent": 25,
+      "price": 175.0,
+      "discount_percent": 25.0,
       "stock_status": "Out of Stock",
       "image_paths": "assets/images/products/marjoram-honey 450g/1.jpg",
       "category_ar": "عسل زهور",
@@ -314,7 +314,7 @@
       "description": "النص الوصفي تحت عنوان قسم المنتجات"
     },
     "about_hero_title": {
-      "value_ar": "قصتنا في قطاف العسل",
+      "value_ar": "قصتنا في عسل قطاف",
       "value_en": "Our Story at Qetaf Honey",
       "description": "عنوان صفحة من نحن"
     },
@@ -324,7 +324,7 @@
       "description": "الوصف التمهيدي لصفحة من نحن"
     },
     "about_p1": {
-      "value_ar": "في «قطاف العسل»، بدأنا رحلتنا من إيمان راسخ بأن العسل الطبيعي ليس مجرد غذاء بل هو شفاء وطاقة حيوية نقية. نختار مواقع مناحلنا بعناية في البيئات الجبلية والوديان والبراري المفتوحة بعيداً عن التلوث والمبيدات.",
+      "value_ar": "في قطاف، بدأنا رحلتنا من إيمان راسخ بأن العسل الطبيعي ليس مجرد غذاء بل هو شفاء وطاقة حيوية نقية. نختار مواقع مناحلنا بعناية في البيئات الجبلية والوديان والبراري المفتوحة بعيداً عن التلوث والمبيدات.",
       "value_en": "At Qetaf Honey, our passion was sparked by the understanding that pure raw honey is more than food—it is living wellness and holistic vitality. We locate our apiaries in untouched mountain valleys and wild botanical sanctuaries.",
       "description": "الفقرة الأولى في قصة من نحن"
     },
@@ -389,12 +389,12 @@
       "description": "عنوان قسم الأسئلة الشائعة"
     },
     "faq_1_q": {
-      "value_ar": "كيف أتأكد من أن عسل قطاف طبيعي 100%؟",
+      "value_ar": "ما هو ضمان قطاف الذهبي؟",
       "value_en": "How do I know Qetaf honey is 100% pure?",
       "description": "السؤال الشائع 1"
     },
     "faq_1_a": {
-      "value_ar": "جميع أعسالنا تخضع للفحص المخبري الدوري للتحقق من نسب السكروز والإنزيمات والنقاء التام. كما نقدم ضمان استرجاع كامل في حال ثبت عدم نقاء العسل.",
+      "value_ar": "ضمان قطاف الذهبي يضمن لك جودة و نقاء العسل المقدم اليك. في حالة عدم رضاك عن العسل نقوم بإسترجاعه و ارجاع كامل المبلغ لك.",
       "value_en": "Our honey undergoes stringent third-party laboratory analysis verifying sucrose levels, moisture, and active pollen count. We provide a full money-back guarantee.",
       "description": "إجابة السؤال 1"
     },
@@ -414,7 +414,7 @@
       "description": "السؤال الشائع 3"
     },
     "faq_3_a": {
-      "value_ar": "يستغرق التوصيل عادة من 24 إلى 48 ساعة داخل مدينة الشروق ومدينتي وبدر والمدن المحيطة. الشحن مجاني للطلبات التي تتجاوز 500 جنيه.",
+      "value_ar": "يستغرق التوصيل عادة من 48 إلى 72 ساعة داخل مدينة الشروق ومدينتي وبدر ومدينة العبور والمدن المحيطة. الشحن مجاني طوال فترة عروض الجمعة البيضاء.",
       "value_en": "Orders in El Shorouk, Madinaty, Badr, and surrounding areas arrive within 24-48 hours. Free delivery applies on orders above 500 EGP.",
       "description": "إجابة السؤال 3"
     },
@@ -439,7 +439,7 @@
       "description": "نص الضمان في الفوتر"
     },
     "copyright_text": {
-      "value_ar": "جميع الحقوق محفوظة © قطاف العسل",
+      "value_ar": "جميع الحقوق محفوظة © عسل قطاف",
       "value_en": "All Rights Reserved © Qetaf Honey",
       "description": "نص حقوق الملكية أسفل الموقع"
     },

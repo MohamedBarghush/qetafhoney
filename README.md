@@ -53,7 +53,7 @@ To ensure the website displays crisp visuals with fast load times, adhere to the
 | Image Type | Folder Path | Aspect Ratio | Recommended Resolution | Recommended Format & Size |
 | :--- | :--- | :--- | :--- | :--- |
 | **Brand Logo** | `assets/images/logo/logo.png` | Flexible (Horizontal) | **600 × 200 px** (or SVG) | PNG with transparent background or SVG vector |
-| **Hero Slider Banners** | `assets/images/landing/hero/` | **2.3 : 1** or **16 : 9** | **1600 × 700 px** (or 1920 × 800 px) | JPG / WebP (< 250 KB) |
+| **Hero Slider Banners** | `assets/images/landing/hero/` | **16 : 9 (Horizontal)** | **1376 × 768 px** | JPG / WebP (< 250 KB) |
 | **Small Offer Cards** | `assets/images/landing/offers/` | **4 : 3** | **800 × 600 px** | JPG / WebP (< 180 KB) |
 | **Product Images** | `assets/images/products/{product-slug}/` | **1 : 1 (Square)** | **800 × 800 px** (or 1000 × 1000 px) | JPG / WebP (< 200 KB) |
 

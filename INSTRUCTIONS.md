@@ -79,7 +79,7 @@ qetafhoney/
 | نوع الصورة | المسار في المجلدات | النسبة (Aspect Ratio) | الأبعاد الموصى بها (Resolution) | الصيغة المفضلة |
 | :--- | :--- | :--- | :--- | :--- |
 | **شعار المتجر (Logo)** | `assets/images/logo/logo.png` | حر (أفقي) | **600 × 200 بكسل** (أو SVG) | PNG بخلفية شفافة أو SVG |
-| **سلايدر العروض الرئيسي (Hero Slider)** | `assets/images/landing/hero/` | **2.3 : 1** أو **16 : 9** | **1600 × 700 بكسل** (أو 1920 × 800) | JPG أو WebP (أقل من 300KB) |
+| **سلايدر العروض الرئيسي (Hero Slider)** | `assets/images/landing/hero/` | **16 : 9 (أفقي)** | **1376 × 768 بكسل** | JPG أو WebP (أقل من 300KB) |
 | **بطاقات العروض الصغيرة (Small Cards)** | `assets/images/landing/offers/` | **4 : 3** | **800 × 600 بكسل** | JPG أو WebP (أقل من 200KB) |
 | **صور المنتجات (Product Cards)** | `assets/images/products/{اسم-المنتج}/` | **1 : 1 (مربعة)** | **800 × 800 بكسل** (أو 1000 × 1000) | JPG أو WebP (أقل من 200KB) |
 

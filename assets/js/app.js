@@ -412,8 +412,11 @@ function renderHeroSlider() {
     const img = offer.image_path || 'assets/images/landing/hero/hero1.jpg';
     const link = offer.link_url || '#products';
 
+    const hasContent = Boolean((title && title.trim()) || (subtitle && subtitle.trim()));
+
     return `
-      <div class="slide-card" data-index="${idx}">
+      <div class="slide-card ${!hasContent ? 'slide-image-only' : ''}" data-index="${idx}">
+        ${hasContent ? `
         <div class="slide-content">
           ${badge ? `<div class="slide-badge"><span>🍯</span> ${badge}</div>` : ''}
           <h2 class="slide-title">${title}</h2>
@@ -425,8 +428,11 @@ function renderHeroSlider() {
             </a>
           </div>
         </div>
+        ` : ''}
         <div class="slide-image-wrapper">
-          <img src="${img}" alt="${title}" class="slide-image" loading="lazy" onerror="this.src='assets/images/landing/hero/hero1.jpg'">
+          <a href="${link}" onclick="handleOfferLink('${link}')" style="display: block; width: 100%;">
+            <img src="${img}" alt="${title || 'عرض قطاف'}" class="slide-image" loading="lazy" onerror="this.src='assets/images/landing/hero/hero1.jpg'">
+          </a>
         </div>
       </div>
     `;

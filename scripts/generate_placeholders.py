@@ -45,7 +45,7 @@ def draw_honey_jar(draw, cx, cy, size=150, color=(240, 160, 20)):
     # Honey dipper drop
     draw.ellipse([cx - 8, cy + h/2 + 10, cx + 8, cy + h/2 + 26], fill=(245, 175, 25))
 
-def generate_banner(path, text, subtext, color1, color2, width=1600, height=700):
+def generate_banner(path, text, subtext, color1, color2, width=1376, height=768):
     os.makedirs(os.path.dirname(path), exist_ok=True)
     img = create_gradient(width, height, color1, color2)
     overlay = Image.new('RGBA', (width, height), (0,0,0,0))
